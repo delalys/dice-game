@@ -13,3 +13,9 @@ $primary: #d93731;
 body {
 	background-color: Cornsilk;
 }
+#AboutThisAppBtn {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	z-index: 999;
+}

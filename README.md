@@ -1,4 +1,4 @@
-# dice-game
+# Dice game
 
 I've developed this application to learn Javascript.
 

@@ -47,8 +47,34 @@ class Game {
 
 		updateRollDice(target);
 	}
+}
 
-	sum() {
+//------------------------------------//
+// Dice number management
+//------------------------------------//
 
+function increaseDiceNumber() {
+	var overallDiceNumber = document.querySelectorAll('.board-controls_saved-dices .dice').length + parseInt(diceNumber.textContent);
+	if (overallDiceNumber < 9) {
+		diceNumber.textContent = parseInt(diceNumber.textContent) + 1;
 	}
 }
+
+function decreaseDiceNumber() {
+	if (diceNumber.textContent > 1 ) {
+		diceNumber.textContent = parseInt(diceNumber.textContent) - 1;
+	}
+}
+
+function updateDiceNumber() {
+	document.addEventListener('click', function() {
+		if (event.target == lessDiceBtn) {
+			decreaseDiceNumber();
+		}
+		if (event.target == moreDiceBtn) {
+			increaseDiceNumber();
+		}
+	});
+};
+
+updateDiceNumber();

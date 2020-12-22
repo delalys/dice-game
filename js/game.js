@@ -40,6 +40,9 @@ class Game {
 				// Roll animation
 				diceHTML.classList.remove('unrolled');
 
+				// Shows notice
+				document.querySelector('.notice').style.display = "block";
+
 				// Count total
 				countTotal('board_dice-container', 'board_score');
 			}, 300, i, diceHTML, diceRotation, diceTopPosition, diceLeftPosition, diceTimeTransition);

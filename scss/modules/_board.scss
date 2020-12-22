@@ -15,6 +15,18 @@ $border-color: rgba(255,255,255,0.5);
 	background: $grey-darker;
 
 	border: solid $board-first-border +2px $border-color;
+	.notice {
+		display: none;
+		font-style: italic;
+		opacity: 0.5;
+		color: white;
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		left: 0;
+		text-align: center;
+		bottom: $board-padding * 4;
+	}
 
 	&:before,
 	&:after {
@@ -235,6 +247,8 @@ $border-color: rgba(255,255,255,0.5);
 
 .board_dice-container {
 	width: 100%;
+	position: relative;
+	z-index: 99;
 }
 
 .less-dices-btn,

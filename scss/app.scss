@@ -1,0 +1,34 @@
+$grey: rgba(0,0,0,0.7);
+$grey-dark: rgba(0,0,0,0.8);
+$grey-darker: rgba(0,0,0,0.9);
+$primary: red;
+
+// Vendors
+@import "vendors/bootstrap/scss/bootstrap";
+
+// Modules
+@import "modules/dice";
+@import "modules/board";
+
+body {
+	&:before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $grey;
+		z-index: 0;
+	}
+	&:after {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $primary;
+		z-index: -1;
+	}
+}

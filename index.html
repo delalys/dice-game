@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Narrow Jumbotron Template for Bootstrap</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- App CSS -->
+  <link href="css/app.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="game-container my-5 justify-content-center d-flex flex-wrap">
+
+    <!-- BOARD CONTROLS -->
+    <div class="board-controls">
+      <div class="board-controls_control">
+        <div class="board-title">Dice color:</div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="colorDices" id="colorDices1" value="white" checked>
+          <label class="form-check-label" for="colorDices1">
+            White
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="colorDices" id="colorDices2" value="black">
+          <label class="form-check-label" for="colorDices2">
+            Black
+          </label>
+        </div>
+      </div>
+      <div class="board-controls_control">
+        <div class="board-title">Number of dices:</div>
+        <span class="less-dices-btn">-</span><span class="dices-number" id="diceNumber">1</span><span class="more-dices-btn">+</span>
+      </div>
+      <div class="board-controls_control is-btn">
+        <span id="rollBtn" class="btn btn-block btn-primary">Roll!</span>
+      </div>
+      
+      <!-- BOARD INFOS -->
+      <div class="board-controls_turn-infos">
+        <div class="board-controls_turn-info is-rolls-count">
+          Rolls: <span class="rolls">0</span>
+        </div>
+        <div class="board-controls_turn-info is-score">
+          Score: <span class="score">0</span>
+        </div>
+        <div class="board-controls_saved-dices" data-dice="">
+          <div class="marks"></div>
+          <div class="dices"></div>
+        </div>
+        <div class="board-controls_turn-info is-clear">
+          <div class="btn btn-secondary w-100 clear-btn">New turn (clear)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOARD DICE TRACK -->
+    <div clas="justify-content-center flex-wrap">
+      <div class="board d-flex  align-items-center justify-content-center">
+        <div class="board-bg"></div>
+        <div class="board_dice-container"></div>
+        <div class="board_saved-dices">
+          <div>
+            Score (<span class="score">0</span>)
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src = "js/dice.js"></script>
+  <script src = "js/game.js"></script>
+  <script src = "js/app.js"></script>
+</body>
+</html>

@@ -29,7 +29,10 @@ document.addEventListener('click', function() {
 //------------------------------------//
 
 function increaseDiceNumber() {
-	diceNumber.textContent = parseInt(diceNumber.textContent) + 1;
+	var overallDiceNumber = document.querySelectorAll('.board-controls_saved-dices .dice').length + parseInt(diceNumber.textContent);
+	if (overallDiceNumber < 9) {
+		diceNumber.textContent = parseInt(diceNumber.textContent) + 1;
+	}
 }
 
 function decreaseDiceNumber() {
@@ -210,3 +213,7 @@ document.addEventListener('click', function() {
 		}
 	}
 });
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

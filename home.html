@@ -8,7 +8,7 @@
   <meta name="author" content="">
 
   <title>Narrow Jumbotron Template for Bootstrap</title>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,12 +18,15 @@
 
 <body>
 
-  <div class="game-container my-5 justify-content-center d-flex flex-wrap">
+  <div class="game-container py-5 justify-content-center d-flex flex-wrap">
 
     <!-- BOARD CONTROLS -->
     <div class="board-controls">
       <div class="board-controls_control">
-        <div class="board-title">Dice color:</div>
+        <h3>Dices:</h3>
+      </div>
+      <div class="board-controls_control">
+        <div class="board-title">Color:</div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="colorDices" id="colorDices1" value="white" checked>
           <label class="form-check-label" for="colorDices1">
@@ -38,7 +41,7 @@
         </div>
       </div>
       <div class="board-controls_control">
-        <div class="board-title">Number of dices:</div>
+        <div class="board-title">Number:</div>
         <span class="less-dices-btn">-</span><span class="dices-number" id="diceNumber">1</span><span class="more-dices-btn">+</span>
       </div>
       <div class="board-controls_control is-btn">
@@ -58,7 +61,7 @@
           <div class="dices"></div>
         </div>
         <div class="board-controls_turn-info is-clear">
-          <div class="btn btn-secondary w-100 clear-btn">New turn (clear)</div>
+          <div class="btn btn-link w-100 clear-btn">New turn (clear)</div>
         </div>
       </div>
     </div>
@@ -78,6 +81,35 @@
 
   </div>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src = "js/dice.js"></script>
   <script src = "js/game.js"></script>
   <script src = "js/app.js"></script>

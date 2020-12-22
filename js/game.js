@@ -25,7 +25,7 @@ class Game {
 			// Creates random value for animation
 			var diceHTML = document.querySelector('.board_dice-container').querySelectorAll('.dice')[i];
 			var diceRotation = Math.round(Math.random() * (500 - 1) + 1);
-			var diceTopPosition = Math.round(Math.random() * (7 - -7) + -7);
+			var diceTopPosition = Math.round(Math.random() * (0 - -0) + -0);
 			var diceLeftPosition = Math.round(Math.random() * (150 - -150) + -150);
 			var diceTimeTransition = Math.round(Math.random() * (500 - 300) + 300);
 			

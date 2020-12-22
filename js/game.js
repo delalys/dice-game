@@ -25,7 +25,7 @@ class Game {
 			// Creates random value for animation
 			var diceHTML = document.querySelector('.board_dice-container').querySelectorAll('.dice')[i];
 			var diceRotation = Math.round(Math.random() * (500 - 1) + 1);
-			var diceTopPosition = Math.round(Math.random() * (0 - -0) + -0);
+			var diceTopPosition = Math.round(Math.random() * (2 - -2) + -2);
 			var diceLeftPosition = Math.round(Math.random() * (150 - -150) + -150);
 			var diceTimeTransition = Math.round(Math.random() * (500 - 300) + 300);
 			
@@ -41,7 +41,7 @@ class Game {
 				diceHTML.classList.remove('unrolled');
 
 				// Count total
-				countTotal('board_dice-container', 'board_saved-dices');
+				countTotal('board_dice-container', 'board_score');
 			}, 300, i, diceHTML, diceRotation, diceTopPosition, diceLeftPosition, diceTimeTransition);
 		}
 

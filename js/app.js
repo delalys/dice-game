@@ -157,18 +157,20 @@ function countTotal(pathDice, pathScore) {
 document.addEventListener('click', function() {
 	var dices = document.querySelectorAll('.board .dice');
 	var dicesBack = document.querySelectorAll('.board-controls_saved-dices .dice');
+	
 
 	// Moves clicked dice to game board
 	for (var i = 0; i < dicesBack.length; i++) {
 		let dice = dicesBack[i];
 		let savedDice = document.querySelectorAll('.board-controls_saved-dices .dice').length + 1;
 		if (event.target == dice) {
+
 			// Moves dice
-			board.querySelector('.board .board_dice-container').appendChild(dice);
+			board.querySelector('.board_dice-container').appendChild(dice);
 			// Updates board contorls score
 			countTotal('board-controls_saved-dices', 'board-controls_turn-info.is-score');
 			// Updates board game score
-			countTotal('board_dice-container', 'board_saved-dices');
+			countTotal('board_dice-container', 'board_score');
 			// Updates dice number in controls
 			var test = parseInt(diceNumber.textContent);
 			if (dices.length > 0 ) {
@@ -183,6 +185,32 @@ document.addEventListener('click', function() {
 			}
 		}
 	}
+
+	// // Moves clicked dice to game board
+	// for (var i = 0; i < dicesBack.length; i++) {
+	// 	let dice = dicesBack[i];
+	// 	let savedDice = document.querySelectorAll('.board-controls_saved-dices .dice').length + 1;
+	// 	if (event.target == dice) {
+	// 		// Moves dice
+	// 		board.querySelector('.board .board_dice-container').appendChild(dice);
+	// 		// Updates board contorls score
+	// 		countTotal('board-controls_saved-dices', 'board-controls_turn-info.is-score');
+	// 		// Updates board game score
+	// 		countTotal('board_dice-container', 'board_saved-dices');
+	// 		// Updates dice number in controls
+	// 		var test = parseInt(diceNumber.textContent);
+	// 		if (dices.length > 0 ) {
+	// 			increaseDiceNumber();
+	// 		}
+	// 		// Adds visual dice spot
+	// 		savedDiceMark();
+	// 		// Hides turn info and reset turn
+	// 		if (dicesBack.length == 1 ) {
+	// 			console.log('dicesBack.length = '+dicesBack.length);
+	// 			clearTurn();
+	// 		}
+	// 	}
+	// }
 
 
 	// Moves clicked dice to side board
@@ -199,7 +227,7 @@ document.addEventListener('click', function() {
 			// Updates board contorls score
 			countTotal('board-controls_saved-dices', 'board-controls_turn-info.is-score');
 			// Updates board game score
-			countTotal('board_dice-container', 'board_saved-dices');
+			countTotal('board_dice-container', 'board_score');
 			// Updates dice number in controls
 			decreaseDiceNumber();
 			// Initilaise roll number to 1

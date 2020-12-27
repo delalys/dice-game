@@ -27,16 +27,10 @@ body {
 		bottom: inherit;
 	}
 }
-
 body {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+    touch-action: manipulation;
 }
 
-html {
-  height: -webkit-fill-available;
-}
 @supports (-webkit-touch-callout: none) {
 	.game-container {
 		height: calc(var(--vh, 1vh) * 100);

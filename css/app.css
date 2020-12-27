@@ -11744,20 +11744,13 @@ body {
   }
 }
 
-/* line 31, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
+/* line 30, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
 body {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-}
-
-/* line 37, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
-html {
-  height: -webkit-fill-available;
+  touch-action: manipulation;
 }
 
 @supports (-webkit-touch-callout: none) {
-  /* line 41, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
+  /* line 35, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
   .game-container {
     height: calc(var(--vh, 1vh) * 100);
   }

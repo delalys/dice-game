@@ -19,3 +19,11 @@ body {
 	bottom: 1em;
 	z-index: 999;
 }
+@media (max-width: 576px) {
+	#AboutThisAppBtn {
+		top: 1em;
+		left: 1em;
+		right: inherit;
+		bottom: inherit;
+	}
+}

@@ -1,5 +1,5 @@
 const rollButton = document.getElementById('rollBtn');
-const diceNumber = document.querySelector('#diceNumber');
+var diceNumber = document.querySelector('#diceNumber');
 const lessDiceBtn = document.querySelector('.less-dices-btn');
 const moreDiceBtn = document.querySelector('.more-dices-btn');
 const boardControls = document.querySelector('.board-controls');
@@ -30,15 +30,17 @@ function savedDiceMark() {
 	var marks = document.querySelectorAll('.board-controls_saved-dices .mark');
 	var marksFullRowNumber = Math.ceil(dices.length/3.0) * 3;
 	// Adds 3 marks every 3 dices rounded up
-	for (var i = 0; i < marksFullRowNumber; i++) {
-		if (marks.length < marksFullRowNumber) {
-			let mark = document.createElement('span');
-			mark.classList.add('mark');
-			document.querySelector('.board-controls_saved-dices .marks').appendChild(mark);
+	// for (var i = 0; i < marksFullRowNumber; i++) {
+	// 	if (marks.length < marksFullRowNumber) {
+	// 		let mark = document.createElement('span');
+	// 		mark.classList.add('mark');
+	// 		document.querySelector('.board-controls_saved-dices .marks').appendChild(mark);
 
-			marks = document.querySelectorAll('.board-controls_saved-dices .mark');
-		}
-	}
+	// 		marks = document.querySelectorAll('.board-controls_saved-dices .mark');
+	// 	}
+	// }
+	// Displays marks
+	document.querySelector('.board-controls_turn-infos').style.display = "block";
 	// Add saved class to marks when a dice is saved
 	for (var i = 0; i < dices.length; i++) {
 		marks[i].classList.add('saved');
@@ -54,18 +56,19 @@ function savedDiceMark() {
 // Dices saving management
 //------------------------------------//
 
+// Counts number of dices on game
 function countTotal(pathDice, pathScore) {
 	// Display infos cartdrige
 	document.querySelector(`.${pathDice}`).style.display = 'block';
 	document.querySelector(`.${pathScore}`).style.display = 'block';
 	// Gets score of all dices and assigns it to score location
 	var dices = document.querySelectorAll(`.${pathDice} .dice`);
-	var scoreAsideDices = document.querySelector(`.${pathScore} .score`);
+	var scoreLocation = document.querySelector(`.${pathScore} .score`);
 	var sum = 0;
 	for (var i = 0; i < dices.length; i++) {
 		sum = sum + parseInt(dices[i].dataset.number);
 	}
-	scoreAsideDices.textContent =  sum;
+	scoreLocation.textContent =  sum;
 }
 
 document.addEventListener('click', function() {
@@ -97,6 +100,8 @@ document.addEventListener('click', function() {
 			document.querySelector('.board-controls_saved-dices').dataset.dice = savedDice;
 			// Adds visual dice spot
 			savedDiceMark();
+			// Check if 9 dices saved locks the game
+			maxDiceNumber();
 		}
 	}
 
@@ -106,6 +111,8 @@ document.addEventListener('click', function() {
 		let savedDice = document.querySelectorAll('.board-controls_saved-dices .dice').length + 1;
 		if (event.target == dice) {
 
+			// Removes top position, css takes lead 
+			dice.style.top = "";
 			// Moves dice
 			board.querySelector('.board_dice-container').appendChild(dice);
 			// Updates board contorls score
@@ -124,6 +131,8 @@ document.addEventListener('click', function() {
 				console.log('dicesBack.length = '+dicesBack.length);
 				clearTurn();
 			}
+			// Check if 9 dices saved locks the game
+			maxDiceNumber();
 		}
 	}
 });

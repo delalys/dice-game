@@ -18,14 +18,14 @@
 
 <body>
 
-  <div class="game-container py-5 justify-content-center d-flex flex-wrap">
+  <div class="game-container py-lg-5 justify-content-center d-flex flex-wrap">
 
     <!-- BOARD CONTROLS -->
     <div class="board-controls">
-      <div class="board-controls_control">
+      <div class="board-controls_control main-title d-block">
         <h3>Dices:</h3>
       </div>
-      <div class="board-controls_control">
+      <div class="board-controls_control is-secondary">
         <div class="board-title">Color:</div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="colorDices" id="colorDices1" value="white" checked>
@@ -40,7 +40,7 @@
           </label>
         </div>
       </div>
-      <div class="board-controls_control">
+      <div class="board-controls_control is-dice-number">
         <div class="board-title">Number:</div>
         <span class="less-dices-btn">-</span><span class="dices-number" id="diceNumber">1</span><span class="more-dices-btn">+</span>
       </div>
@@ -57,17 +57,28 @@
           Score: <span class="score">0</span>
         </div>
         <div class="board-controls_saved-dices" data-dice="">
-          <div class="marks"></div>
+          <div class="marks">
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+            <span class="mark"></span>
+          </div>
           <div class="dices"></div>
         </div>
         <div class="board-controls_turn-info is-clear">
-          <div class="btn btn-link w-100 clear-btn">New turn (clear)</div>
+          <div class="btn btn-link w-100 clear-btn"><span class="d-none d-sm-block">New turn (clear)</span><span class="d-block d-sm-none">x</span></div>
         </div>
       </div>
     </div>
 
+
     <!-- BOARD DICE TRACK -->
-    <div clas="justify-content-center flex-wrap">
+    <div class="dice-track-container justify-content-center flex-wrap">
       <div class="board d-flex  align-items-center justify-content-center">
         <div class="board-bg"></div>
         <div class="board_dice-container"></div>

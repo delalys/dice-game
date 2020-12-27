@@ -33,18 +33,17 @@ function clearTurn() {
 	for (var i = 0; i < info.length; i++) {
 		info[i].style.display = "none";
 	}
+	
 	rollCount.textContent = 0;
 	// Removes Dices
 	var dices = document.querySelectorAll('.board-controls_saved-dices .dice');
 	for (var i = 0; i < dices.length; i++) {
 		dices[i].remove();
 	}
-	// Removes Marks
-	var marks = document.querySelectorAll('.board-controls_saved-dices .mark');
-	for (var i = 0; i < marks.length; i++) {
-		marks[i].remove();
-	}
-
+	// Hides Marks
+	document.querySelector('.board-controls_turn-infos').style.display = "none";
+	// Adds the number of saved dices back ot the number of dies to roll
+	diceNumber.textContent = parseInt(diceNumber.textContent) + dices.length;
 	// Adds number of dice saved to DOM
 	document.querySelector('.board-controls_saved-dices').dataset.dice = 0;
 }

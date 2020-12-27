@@ -26,15 +26,25 @@ class Game {
 			var diceHTML = document.querySelector('.board_dice-container').querySelectorAll('.dice')[i];
 			var diceRotation = Math.round(Math.random() * (500 - 1) + 1);
 			var diceTopPosition = Math.round(Math.random() * (2 - -2) + -2);
-			var diceLeftPosition = Math.round(Math.random() * (150 - -150) + -150);
 			var diceTimeTransition = Math.round(Math.random() * (500 - 300) + 300);
+			if (screenSm.matches) {
+				var diceLeftPosition = Math.round(Math.random() * (20 - -20) + -20);
+				twoHalfsGrid(diceHTML, i);
+			} else if (screenSmToLg.matches) {
+				var diceLeftPosition = Math.round(Math.random() * (30 - -30) + -30);
+				twoHalfsGrid(diceHTML, i);
+			} else if (screenLgMore.matches) {
+				var diceLeftPosition = Math.round(Math.random() * (80 - -80) + -80);
+				twoHalfsGrid(diceHTML, i);
+			}
+
 			
 			setTimeout(function(i, diceHTML, diceRotation, diceTopPosition, diceLeftPosition, diceTimeTransition){ 
 				
 				// Randomise animation
 				diceHTML.style.transform = `rotate(${diceRotation}deg)`;
 				diceHTML.style.transition = `${diceTimeTransition}ms`;
-				diceHTML.style.top = `${diceTopPosition}px`;
+				diceHTML.style.marginTop = `${diceTopPosition}px`;
 				diceHTML.style.marginLeft = `${diceLeftPosition}px`;
 				
 				// Roll animation
@@ -49,12 +59,15 @@ class Game {
 		}
 
 		updateRollDice(target);
+		// if neumber of dices on game = 9, disable new dices
+		maxDiceNumber()
 	}
 }
 
 //------------------------------------//
 // Dice number management
 //------------------------------------//
+
 
 function increaseDiceNumber() {
 	var overallDiceNumber = document.querySelectorAll('.board-controls_saved-dices .dice').length + parseInt(diceNumber.textContent);
@@ -63,10 +76,29 @@ function increaseDiceNumber() {
 	}
 }
 
+function maxDiceNumber() {
+	var toRollDiceNumber = parseInt(diceNumber.textContent);
+	var savedDiceNumber = document.querySelectorAll('.board-controls_saved-dices .dice').length;
+	var overallDiceNumber = savedDiceNumber + toRollDiceNumber;
+	if (savedDiceNumber == 9 ) {
+		document.querySelector('.board-controls').classList.add('game-disabled');
+	} else {
+		document.querySelector('.board-controls').classList.remove('game-disabled');
+	}
+	if (overallDiceNumber >= 9 ) {
+		document.querySelector('.board-controls').classList.add('max-dice-number', 'more-dice-disable');
+	} else {
+		document.querySelector('.board-controls').classList.remove('max-dice-number', 'more-dice-disable');
+	}
+}
+
 function decreaseDiceNumber() {
+	// Check if 9 then display number
+	maxDiceNumber();
 	if (diceNumber.textContent > 1 ) {
 		diceNumber.textContent = parseInt(diceNumber.textContent) - 1;
 	}
+	maxDiceNumber();
 }
 
 function updateDiceNumber() {
@@ -81,3 +113,8 @@ function updateDiceNumber() {
 };
 
 updateDiceNumber();
+
+
+var screenSm = window.matchMedia("(max-width: 575px)");
+var screenSmToLg = window.matchMedia("(min-width: 576px) and (max-width: 1199px)");
+var screenLgMore = window.matchMedia("(min-width: 1200px)");

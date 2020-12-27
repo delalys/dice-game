@@ -1,30 +1,139 @@
-$dice-color: MintCream;
-$dice-size: 60px;
-$dice-border: 5px;
-$dice-radius: 14px;
+@mixin dice-maker($size: lg) {
+	$dice-size: 60px !default;
+	$dice-border: 5px !default;
+	$dice-radius: 14px !default;
+	$dot-size: 12px !default;
+	$dot-border: 2px !default;
+	$dice-color: MintCream;
+	$dot-color: $primary;
+	$dice-margin: 1em;
 
-$dot-color: $primary;
-$dot-size: 12px;
-$dot-border: 2px;
+	@if $size == xxs {
+		$dice-size: 20px;
+		$dice-border: 2px;
+		$dice-radius: 4px;
+		$dot-size: 4px;
+		$dot-border: 1px;
+	} 
 
-.dice {
-	display: block;
-	position: relative;
-	z-index: 2;
-	margin: 20px 0;
+	@if $size == xs {
+		$dice-size: 27px;
+		$dice-border: 2px;
+		$dice-radius: 4px;
+		$dot-size: 6px;
+		$dot-border: 1px;
+	} 
+
+	@else if $size == sm {
+		$dice-size: 40px;
+		$dice-border: 5px;
+		$dice-radius: 8px;
+		$dot-size: 8px;
+		$dot-border: 1px;
+	}
+
+	// on .dice
 	width: $dice-size;
 	height: $dice-size;
-	background: white;
+	position: absolute;
 	border-radius: $dice-radius;
+	left: calc(50% - (#{$dice-size} / 2));
+	display: block;
+	z-index: 2;
+	margin: 20px 0;
+	background: white;
 	cursor: pointer;
 	background: $dice-color;
 	background-image: url('../img/marble.webp');
 	background-size: cover;
 	box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.2), 0px 0px 2px 2px rgba(0,0,0,0.2);
-
 	transition: all 400ms ease-in-out;
-	left: calc(50% - (#{$dice-size} / 2));
 	transform: rotate(0deg);
+
+	&:nth-child(1) {
+		top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(2) {
+		top: calc(50% - #{$dice-size} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(3) {
+		top: calc(50% + #{$dice-size} + 2 * #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(4) {
+		top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(5) {
+		top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(6) {
+		top: calc(50% - 3 * #{$dice-size} - 2 * #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(7) {
+		top: calc(50% + 3 * #{$dice-size} + 4 * #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(8) {
+		top: calc(50% - 4 * #{$dice-size} - 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	&:nth-child(9) {
+		top: calc(50% + 4 * #{$dice-size} + 5 * #{$dice-margin} - (#{$dice-size} / 2) );
+	}
+	// grids distrubation in two halfs
+	&.position-split-2 {
+		// horizontal
+		&.is-left {
+			left: calc(33% - (#{$dice-size} / 2));
+		}
+		&.is-right {
+			left: calc(66% - (#{$dice-size} / 2));
+		}
+		// vertical
+		&[data-order-id='0'],
+		&[data-order-id='1'] {
+			top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
+		}
+		&[data-order-id='2'],
+		&[data-order-id='3'] {
+			top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
+		}
+		&[data-order-id='4'],
+		&[data-order-id='5'] {
+			top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+		}
+		&[data-order-id='6'],
+		&[data-order-id='7'] {
+			top: calc(50% - 4 * #{$dice-size} - 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+		}
+		&[data-order-id='8'] {
+			top: calc(50% + 4 * #{$dice-size} + 5 * #{$dice-margin} - (#{$dice-size} / 2) );
+		}
+
+		&.unrolled {
+			left: 150%;
+			transform: rotate(300deg);
+		}
+		@if $size == sm {
+			// vertical
+			&[data-order-id='0'],
+			&[data-order-id='1'] {
+				top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
+			}
+			&[data-order-id='2'],
+			&[data-order-id='3'] {
+				top: calc(50% - #{$dice-size} - (#{$dice-size} / 2) );
+			}
+			&[data-order-id='4'],
+			&[data-order-id='5'] {
+				top: calc(50% + #{$dice-size} + 2 * #{$dice-margin} - (#{$dice-size} / 2) );
+			}
+			&[data-order-id='6'],
+			&[data-order-id='7'] {
+				top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
+			}
+			&[data-order-id='8'] {
+				top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+			}
+		}
+	}
 
 	&.bg-white {
 		background-image: url('../img/marble.webp');
@@ -36,28 +145,32 @@ $dot-border: 2px;
 			background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
 		}
 	}
+	&.unrolled {
+		left: 150%;
+		transform: rotate(300deg);
+	}
 
 	// Inside shadow
 	&:before {
-		content: "";
-		display: block;
 		width: $dice-size - ($dice-border * 2);
 		height: $dice-size - ($dice-border * 2);
-		position: absolute;
 		border-radius: $dice-radius -$dice-border;
 		top: $dice-border;
 		left: $dice-border;
-		background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-	}
-
-	// Outside wide shadow
-	&:after {
 		content: "";
 		display: block;
+		position: absolute;
+		background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+	}
+	// Outside wide shadow
+	&:after {
 		width: $dice-size;
 		height: $dice-size;
-		position: absolute;
 		border-radius: $dice-radius;
+		box-shadow: 0px 10px 15px 15px rgba(0,0,0,0.05);
+		content: "";
+		display: block;
+		position: absolute;
 		top: 0;
 		left: 0;
 		box-shadow: 0px 10px 15px 15px rgba(0,0,0,0.05);
@@ -65,36 +178,29 @@ $dot-border: 2px;
 
 	// Dots
 	span {
-		display: none;
-		position: relative;	
 		width: $dot-size;
 		height: $dot-size;	
+		box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.3);
+		display: none;
+		position: relative;	
 		border-radius: 50%;
 		background: $dot-color;
 		position: absolute;
-
 		box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
-		
+
 		// Inside shadow
 		&:before {
-			content: "";
-			display: block;
 			width: $dot-size - ($dot-border * 2);
 			height: $dot-size - ($dot-border * 2);
-			position: absolute;
 			border-radius: $dice-radius -$dot-border;
 			top: $dot-border;
 			left: $dot-border;
+			content: "";
+			display: block;
+			position: absolute;
 			background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
 		}
-
 	}
-
-	&.unrolled {
-		left: 150%;
-		transform: rotate(300deg);
-	}
-
 	&[data-number='1'] {
 		span:first-child {
 			display: block;
@@ -118,10 +224,9 @@ $dot-border: 2px;
 		}
 	}
 	&[data-number='3'] {
+		display: block;
 		span:nth-child(3) {
 			display: block;
-		}
-		span:nth-child(3) {
 			left: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
@@ -197,12 +302,12 @@ $dot-border: 2px;
 			left: 15%;
 		}
 		span:nth-child(3) {
-			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 			right: 15%;
+			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
 		span:nth-child(4) {
-			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 			left: 15%;
+			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
 		span:nth-child(5) {
 			top: 12%;
@@ -213,4 +318,14 @@ $dot-border: 2px;
 			left: 15%;
 		}
 	}
+}
+
+.dice {
+	@include dice-maker();
+}
+.dice-xs {
+	@include dice-maker(xs);
+}
+.dice-sm {
+	@include dice-maker(sm);
 }

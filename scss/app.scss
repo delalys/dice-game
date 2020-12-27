@@ -27,7 +27,9 @@ body {
 		bottom: inherit;
 	}
 }
-body {
+body,
+.less-dices-btn,
+.more-dices-btn {
     touch-action: manipulation;
 }
 

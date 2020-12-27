@@ -629,5 +629,15 @@ $dot-color: $primary;
 				display: none !important;
 			}
 		}
+		.board_score {
+			bottom: 1.5em;
+			right: 1.5em;
+		}
+		.notice {
+			width: 50%;
+			bottom: 1.5em;
+			text-align: left;
+			left: 1.5em;
+		}
 	}
 }

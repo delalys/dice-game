@@ -11759,7 +11759,7 @@ html {
 @supports (-webkit-touch-callout: none) {
   /* line 41, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
   .game-container {
-    height: -webkit-fill-available;
+    height: calc(var(--vh, 1vh) * 100);
   }
   /* CSS specific to iOS devices */
 }

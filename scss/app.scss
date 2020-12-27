@@ -39,7 +39,7 @@ html {
 }
 @supports (-webkit-touch-callout: none) {
 	.game-container {
-		height: -webkit-fill-available;
+		height: calc(var(--vh, 1vh) * 100);
 	}
    /* CSS specific to iOS devices */ 
 }

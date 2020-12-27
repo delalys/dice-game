@@ -11744,4 +11744,17 @@ body {
   }
 }
 
+/* line 31, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
+body,
+.game-container {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+/* line 38, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
+html {
+  height: -webkit-fill-available;
+}
+
 /*# sourceMappingURL=app.css.map */

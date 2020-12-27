@@ -15,16 +15,17 @@ $dot-color: $primary;
 
 	border: solid $board-first-border +2px $border-color;
 	.notice {
+		width: 50%;
+		bottom: 1.5em;
+		text-align: left;
+		left: 1.5em;
 		display: none;
 		font-style: italic;
 		opacity: 0.5;
 		color: white;
 		position: absolute;
 		z-index: 2;
-		width: 100%;
-		left: 0;
-		text-align: center;
-		bottom: $board-padding * 4;
+		line-height: 1em;
 	}
 
 	&:before,
@@ -77,6 +78,10 @@ $dot-color: $primary;
 		position: absolute;
 		bottom: $board-padding * 4;
 		right: $board-padding * 4;
+	}
+	.board_score {
+		bottom: 1.5em;
+		right: 1.5em;
 	}
 
 
@@ -628,16 +633,6 @@ $dot-color: $primary;
 			.main-title {
 				display: none !important;
 			}
-		}
-		.board_score {
-			bottom: 1.5em;
-			right: 1.5em;
-		}
-		.notice {
-			width: 50%;
-			bottom: 1.5em;
-			text-align: left;
-			left: 1.5em;
 		}
 	}
 }

@@ -10844,26 +10844,27 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* line 17, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board .notice {
+  width: 50%;
+  bottom: 1.5em;
+  text-align: left;
+  left: 1.5em;
   display: none;
   font-style: italic;
   opacity: 0.5;
   color: white;
   position: absolute;
   z-index: 2;
-  width: 100%;
-  left: 0;
-  text-align: center;
-  bottom: 28px;
+  line-height: 1em;
 }
 
-/* line 30, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 31, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board:before, .board:after {
   content: '';
   display: block;
   position: absolute;
 }
 
-/* line 36, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 37, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board:before {
   width: calc(100% - (7px * 2) + 4px);
   height: calc(100% - (7px * 2) + 4px);
@@ -10872,7 +10873,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: solid 3px rgba(255, 255, 255, 0.5);
 }
 
-/* line 44, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 45, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board:after {
   width: calc(100% - (7px * 2) - 6px - (3px * 2));
   height: calc(100% - (7px * 2) - 6px - (3px * 2));
@@ -10881,13 +10882,13 @@ a.text-dark:hover, a.text-dark:focus {
   border: solid 2px rgba(255, 255, 255, 0.5);
 }
 
-/* line 53, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 54, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-title {
   margin-right: 1em;
   min-width: 60px;
 }
 
-/* line 58, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 59, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-bg {
   width: 100%;
   height: 100%;
@@ -10901,7 +10902,7 @@ a.text-dark:hover, a.text-dark:focus {
   opacity: 0.5;
 }
 
-/* line 71, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 72, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board_saved-dices,
 .board .board_score {
   line-height: 1em;
@@ -10913,7 +10914,13 @@ a.text-dark:hover, a.text-dark:focus {
   right: 28px;
 }
 
-/* line 84, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 82, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+.board .board_score {
+  bottom: 1.5em;
+  right: 1.5em;
+}
+
+/* line 89, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls {
   padding: 1em;
   background: rgba(0, 0, 0, 0.9);
@@ -10921,25 +10928,25 @@ a.text-dark:hover, a.text-dark:focus {
   border: solid 5px rgba(255, 255, 255, 0.5);
 }
 
-/* line 90, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 95, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls * {
   position: relative;
   color: white;
   z-index: 2;
 }
 
-/* line 96, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 101, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls .dice span {
   pointer-events: none;
 }
 
-/* line 100, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 105, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls h3 {
   line-height: 1em;
   margin-bottom: 0;
 }
 
-/* line 104, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 109, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls:before, .board-controls:after {
   content: '';
   display: block;
@@ -10947,7 +10954,7 @@ a.text-dark:hover, a.text-dark:focus {
   z-index: 1;
 }
 
-/* line 111, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 116, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls:before {
   width: calc(100% - (7px * 2) + 4px);
   height: calc(100% - (7px * 2) + 4px);
@@ -10956,7 +10963,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: solid 3px rgba(255, 255, 255, 0.5);
 }
 
-/* line 119, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 124, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls:after {
   width: calc(100% - (7px * 2) - 6px - (3px * 2));
   height: calc(100% - (7px * 2) - 6px - (3px * 2));
@@ -10965,7 +10972,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: solid 2px rgba(255, 255, 255, 0.5);
 }
 
-/* line 128, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 133, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls .dice {
   position: static;
   display: block;
@@ -10975,12 +10982,12 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 1em !important;
 }
 
-/* line 135, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 140, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls .dice:nth-child(3n) {
   margin-right: 0;
 }
 
-/* line 142, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 147, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls.max-dice-number .less-dices-btn:after {
   content: "max";
   font-size: 12px;
@@ -10992,32 +10999,32 @@ a.text-dark:hover, a.text-dark:focus {
   top: 0.3em;
 }
 
-/* line 153, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 158, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls.max-dice-number #diceNumber {
   opacity: 0;
 }
 
-/* line 158, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 163, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls.more-dice-disable .more-dices-btn {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-/* line 165, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 170, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls.game-disabled #rollBtn {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-/* line 172, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 177, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls-title {
   font-weight: bold;
   font-size: 0.9em;
 }
 
-/* line 176, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 181, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_control {
   padding: 1em;
   line-height: 1em;
@@ -11026,18 +11033,18 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
 }
 
-/* line 182, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 187, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_control.is-btn {
   border: none;
 }
 
-/* line 187, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 192, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_saved-dices {
   position: relative;
   margin: 1em;
 }
 
-/* line 190, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 195, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_saved-dices .marks {
   position: absolute;
   height: 100%;
@@ -11046,7 +11053,7 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
 }
 
-/* line 197, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 202, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_saved-dices .mark {
   padding: 0;
   margin-left: -3px;
@@ -11060,18 +11067,18 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
 }
 
-/* line 208, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 213, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_saved-dices .mark.saved {
   border-color: #d93731;
   box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, 0.3);
 }
 
-/* line 214, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 219, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_saved-dices, .board-controls_turn-info {
   display: none;
 }
 
-/* line 218, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 223, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_turn-infos {
   position: absolute;
   bottom: 1rem;
@@ -11079,36 +11086,36 @@ a.text-dark:hover, a.text-dark:focus {
   width: calc(100% - 2rem);
 }
 
-/* line 224, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 229, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_turn-info {
   padding: 1em;
   line-height: 1em;
   border-top: solid 1px rgba(255, 255, 255, 0.5);
 }
 
-/* line 228, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 233, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_turn-info.is-score, .board-controls_turn-info.is-rolls-count {
   opacity: 0.5;
 }
 
-/* line 232, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 237, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_turn-info.is-score {
   border-bottom: solid 1px rgba(255, 255, 255, 0.5);
 }
 
-/* line 236, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 241, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls .btn-link {
   color: #d93731;
 }
 
-/* line 243, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 248, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board_dice-container {
   width: 100%;
   position: relative;
   z-index: 99;
 }
 
-/* line 249, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 254, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .less-dices-btn,
 .more-dices-btn {
   cursor: pointer;
@@ -11118,19 +11125,19 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0 0.5em;
 }
 
-/* line 256, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 261, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .less-dices-btn:hover,
 .more-dices-btn:hover {
   color: #cb2b25;
 }
 
-/* line 259, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 264, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .less-dices-btn:active,
 .more-dices-btn:active {
   color: #b62721;
 }
 
-/* line 263, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 268, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .less-dices-btn,
 .more-dices-btn,
 .dices-number {
@@ -11140,7 +11147,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 700;
 }
 
-/* line 271, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 276, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .dices-number {
   display: inline-block;
   min-width: 30px;
@@ -11149,73 +11156,73 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 @media (min-width: 1059px) {
-  /* line 467, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 472, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark {
     height: 60px;
     width: 60px;
     border-radius: 17px;
   }
-  /* line 390, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 395, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(3n + 2) {
     left: calc(60px + 1em);
   }
-  /* line 393, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 398, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(3n + 3) {
     left: calc((2 * 60px) + 2 * 1em);
   }
-  /* line 397, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 402, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(4), .board-controls_saved-dices .mark:nth-child(5), .board-controls_saved-dices .mark:nth-child(6) {
     top: calc(60px + 1em);
   }
-  /* line 400, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 405, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(7), .board-controls_saved-dices .mark:nth-child(8), .board-controls_saved-dices .mark:nth-child(9) {
     top: calc((2 * 60px) + 2 * 1em);
   }
-  /* line 403, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 408, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(10), .board-controls_saved-dices .mark:nth-child(11), .board-controls_saved-dices .mark:nth-child(12) {
     top: calc((3 * 60px) + 3 * 1em);
   }
 }
 
-/* line 471, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 476, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls {
   width: calc((3 * 60px) + 7 * 1em);
 }
 
-/* line 461, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+/* line 466, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
 .board-controls_saved-dices {
   height: calc(3 * 60px + 2 * 1em);
 }
 
 @media (min-width: 576px) and (max-width: 1058px) {
-  /* line 479, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 484, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .game-container {
     flex-wrap: inherit !important;
   }
-  /* line 482, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 487, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .dice-track-container {
     width: 100%;
   }
-  /* line 485, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 490, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board {
     width: 100%;
     height: 560px;
     margin-left: 0;
   }
-  /* line 489, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 494, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls {
     flex: 0 0 calc((3 * 40px) + 8 * 1em - 6px);
     font-size: 12px;
   }
-  /* line 455, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 460, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices {
     height: calc(3 * 40px + 2 * 1em);
   }
-  /* line 492, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 497, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls .board-title {
     display: none;
   }
-  /* line 495, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 500, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls:before {
     width: calc(100% - (7px * 2) + 4px);
     height: calc(100% - (7px * 2) + 4px);
@@ -11223,7 +11230,7 @@ a.text-dark:hover, a.text-dark:focus {
     left: 5px;
     border: solid 3px rgba(255, 255, 255, 0.5);
   }
-  /* line 503, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 508, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls:after {
     display: none;
     width: calc(100% - (7px * 2) - 6px - (3px * 2));
@@ -11232,88 +11239,88 @@ a.text-dark:hover, a.text-dark:focus {
     left: 13px;
     border: solid 2px rgba(255, 255, 255, 0.5);
   }
-  /* line 512, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 517, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark {
     height: 40px;
     width: 40px;
     border-radius: 11px;
   }
-  /* line 359, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 364, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(3n + 2) {
     left: calc(40px + 1em);
   }
-  /* line 362, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 367, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(3n + 3) {
     left: calc((2 * 40px) + 2 * 1em);
   }
-  /* line 366, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 371, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(4), .board-controls_saved-dices .mark:nth-child(5), .board-controls_saved-dices .mark:nth-child(6) {
     top: calc(40px + 1em);
   }
-  /* line 369, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 374, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(7), .board-controls_saved-dices .mark:nth-child(8), .board-controls_saved-dices .mark:nth-child(9) {
     top: calc((2 * 40px) + 2 * 1em);
   }
-  /* line 372, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 377, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(10), .board-controls_saved-dices .mark:nth-child(11), .board-controls_saved-dices .mark:nth-child(12) {
     top: calc((3 * 40px) + 3 * 1em);
   }
 }
 
 @media (max-width: 575px) {
-  /* line 520, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 525, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .game-container {
     flex-direction: column-reverse;
     height: 100vh;
   }
-  /* line 524, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 529, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .dice-track-container {
     flex: 1;
   }
-  /* line 425, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 430, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices {
     margin: 0.5em 0 0.5em 0.5em;
   }
-  /* line 428, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 433, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices,
   .board-controls_turn-infos {
     width: calc((5 * 20px) + 4 * 0.5em);
   }
-  /* line 432, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 437, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices {
     height: calc(2 * 20px + 1 * 0.5em);
   }
   width: calc((3 * 20px) + 7 * 0.5em);
-  /* line 461, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 466, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   _saved-dices {
     height: calc(3 * 20px + 2 * 0.5em);
   }
-  /* line 528, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 533, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board {
     width: 100%;
     height: 100%;
     margin-left: 0;
     font-size: 12px;
   }
-  /* line 533, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 538, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board:after, .board-controls:after {
     display: none;
   }
-  /* line 537, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 542, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls {
     width: 100%;
     flex-direction: row-reverse;
     display: flex;
   }
-  /* line 541, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 546, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_turn-infos {
     bottom: 1em;
   }
-  /* line 544, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 549, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_turn-info {
     padding: 0.5em;
   }
-  /* line 546, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 551, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_turn-info.is-clear {
     position: absolute;
     left: 118px;
@@ -11321,17 +11328,17 @@ a.text-dark:hover, a.text-dark:focus {
     border: none;
     padding: 0;
   }
-  /* line 552, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 557, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_turn-info.is-clear .btn {
     color: #d93731 !important;
     padding: 0 0.5em;
     text-decoration: none;
   }
-  /* line 558, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 563, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_turn-info.is-rolls-count, .board-controls_turn-info.is-score {
     display: none !important;
   }
-  /* line 564, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 569, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .dice {
     width: 20px;
     height: 20px;
@@ -11622,15 +11629,15 @@ a.text-dark:hover, a.text-dark:focus {
     top: 12%;
     left: 15%;
   }
-  /* line 571, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 576, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .dice:nth-child(3n) {
     margin-right: 0.5em;
   }
-  /* line 574, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 579, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .dice:nth-child(5n) {
     margin-right: 0;
   }
-  /* line 578, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 583, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark {
     margin-left: -2px;
     margin-top: -2px;
@@ -11640,57 +11647,57 @@ a.text-dark:hover, a.text-dark:focus {
     border-radius: 7px;
     left: 0;
   }
-  /* line 294, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 299, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(5n + 2) {
     left: calc(20px + 0.5em);
   }
-  /* line 297, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 302, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(5n + 3) {
     left: calc((2 * 20px) + 2 * 0.5em);
   }
-  /* line 300, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 305, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(5n + 4) {
     left: calc((3 * 20px) + 3 * 0.5em) !important;
   }
-  /* line 303, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 308, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(6n + 5) {
     left: calc((4 * 20px) + 4 * 0.5em) !important;
   }
-  /* line 308, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 313, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(1), .board-controls_saved-dices .mark:nth-child(2), .board-controls_saved-dices .mark:nth-child(3), .board-controls_saved-dices .mark:nth-child(4), .board-controls_saved-dices .mark:nth-child(5) {
     top: 0 !important;
   }
-  /* line 311, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 316, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_saved-dices .mark:nth-child(6), .board-controls_saved-dices .mark:nth-child(7), .board-controls_saved-dices .mark:nth-child(8), .board-controls_saved-dices .mark:nth-child(9) {
     top: calc(20px + 0.5em) !important;
   }
-  /* line 582, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 587, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control {
     border-bottom: none;
     padding: 0.5em;
   }
-  /* line 585, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 590, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control.is-secondary {
     display: none;
   }
-  /* line 588, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 593, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control.is-btn {
     display: flex;
     flex-direction: column;
     padding-right: 0.2em;
   }
-  /* line 592, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 597, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control.is-btn .btn {
     flex: 1;
     line-height: 2em;
   }
-  /* line 597, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 602, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control.is-dice-number {
     display: block;
     padding: 0 1.5em 0 0;
     text-align: center;
   }
-  /* line 602, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 607, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control .dices-number {
     top: 50%;
     right: 0;
@@ -11699,37 +11706,25 @@ a.text-dark:hover, a.text-dark:focus {
     margin-right: 0;
     position: absolute;
   }
-  /* line 610, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 615, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls_control .less-dices-btn,
   .board-controls_control .more-dices-btn {
     display: block;
     padding-left: 0.3em;
     padding-right: 0.3em;
   }
-  /* line 619, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 624, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls.max-dice-number .less-dices-btn:after {
     right: -2em;
     top: 1.35em;
   }
-  /* line 625, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 630, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls .board-title {
     display: none;
   }
-  /* line 628, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
+  /* line 633, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
   .board-controls .main-title {
     display: none !important;
-  }
-  /* line 632, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
-  .board .board_score {
-    bottom: 1.5em;
-    right: 1.5em;
-  }
-  /* line 636, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_board.scss */
-  .board .notice {
-    width: 50%;
-    bottom: 1.5em;
-    text-align: left;
-    left: 1.5em;
   }
 }
 

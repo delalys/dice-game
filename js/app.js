@@ -129,8 +129,3 @@ document.addEventListener('click', function() {
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
-
-window.onresize = function() {
-    document.body.height = window.innerHeight;
-}
-window.onresize(); // called to initially set the height.

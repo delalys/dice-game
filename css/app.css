@@ -11756,9 +11756,12 @@ html {
   height: -webkit-fill-available;
 }
 
-/* line 40, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
-.game-container {
-  min-height: -webkit-fill-available;
+@supports (-webkit-touch-callout: none) {
+  /* line 41, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/app.scss */
+  .game-container {
+    height: -webkit-fill-available;
+  }
+  /* CSS specific to iOS devices */
 }
 
 /*# sourceMappingURL=app.css.map */

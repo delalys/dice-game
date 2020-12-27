@@ -37,6 +37,9 @@ body {
 html {
   height: -webkit-fill-available;
 }
-.game-container {
-	min-height: -webkit-fill-available;
+@supports (-webkit-touch-callout: none) {
+	.game-container {
+		height: -webkit-fill-available;
+	}
+   /* CSS specific to iOS devices */ 
 }

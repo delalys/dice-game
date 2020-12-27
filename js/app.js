@@ -28,17 +28,6 @@ document.addEventListener('click', function() {
 function savedDiceMark() {
 	var dices = document.querySelectorAll('.board-controls_saved-dices .dice');
 	var marks = document.querySelectorAll('.board-controls_saved-dices .mark');
-	var marksFullRowNumber = Math.ceil(dices.length/3.0) * 3;
-	// Adds 3 marks every 3 dices rounded up
-	// for (var i = 0; i < marksFullRowNumber; i++) {
-	// 	if (marks.length < marksFullRowNumber) {
-	// 		let mark = document.createElement('span');
-	// 		mark.classList.add('mark');
-	// 		document.querySelector('.board-controls_saved-dices .marks').appendChild(mark);
-
-	// 		marks = document.querySelectorAll('.board-controls_saved-dices .mark');
-	// 	}
-	// }
 	// Displays marks
 	document.querySelector('.board-controls_turn-infos').style.display = "block";
 	// Add saved class to marks when a dice is saved
@@ -140,3 +129,8 @@ document.addEventListener('click', function() {
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+
+window.onresize = function() {
+    document.body.height = window.innerHeight;
+}
+window.onresize(); // called to initially set the height.

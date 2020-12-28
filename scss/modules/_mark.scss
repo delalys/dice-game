@@ -1,0 +1,131 @@
+@mixin mark-maker($size) {
+	@if $size == xxs {
+		$dice-size: 20px;
+		$dice-border: 2px;
+		$dice-radius: 4px;
+		$dot-size: 4px;
+		$dot-border: 1px;
+		$border-spacing: 0.5em;
+		margin-left: -2px;
+		margin-top: -2px;
+		border-width: 2px;
+
+		height: $dice-size;
+		width: $dice-size;
+		border-radius: $dice-radius + 3px;
+		left: 0;
+		// Horizontal positionning
+		&:nth-child(5n + 2) {
+			left: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(5n + 3) {
+			left: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		&:nth-child(5n + 4) {
+			left: calc((3 * #{$dice-size}) + 3 * #{$border-spacing}) !important;
+		}
+		&:nth-child(6n + 5) {
+			left: calc((4 * #{$dice-size}) + 4 * #{$border-spacing}) !important;
+		}
+
+		// Vertical positionning
+		&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+			top: 0!important;
+		}
+		&:nth-child(6), &:nth-child(7), &:nth-child(8), &:nth-child(9) {
+			top: calc(#{$dice-size} + #{$border-spacing}) !important;
+		}
+	} 
+	@if $size == xs {
+		$dice-size: 27px;
+		$dice-border: 2px;
+		$dice-radius: 4px;
+		$dot-size: 6px;
+		$dot-border: 1px;
+		$border-spacing: 1em;
+
+		height: $dice-size;
+		width: $dice-size;
+		border-radius: $dice-radius + 3px;
+
+		// Horizontal positionning
+		&:nth-child(3n + 2) {
+			left: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(3n + 3) {
+			left: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		// Vertical positionning
+		&:nth-child(4), &:nth-child(5), &:nth-child(6) {
+			top: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(7), &:nth-child(8), &:nth-child(9) {
+			top: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		&:nth-child(10), &:nth-child(11), &:nth-child(12) {
+			top: calc((3 * #{$dice-size}) + 3 * #{$border-spacing});
+		}
+	} 
+
+	@else if $size == sm {
+		$dice-size: 40px;
+		$dice-border: 5px;
+		$dice-radius: 8px;
+		$dot-size: 8px;
+		$dot-border: 1px;
+		$border-spacing: 1em !default;
+
+		height: $dice-size;
+		width: $dice-size;
+		border-radius: $dice-radius + 3px;
+
+		// Horizontal positionning
+		&:nth-child(3n + 2) {
+			left: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(3n + 3) {
+			left: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		// Vertical positionning
+		&:nth-child(4), &:nth-child(5), &:nth-child(6) {
+			top: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(7), &:nth-child(8), &:nth-child(9) {
+			top: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		&:nth-child(10), &:nth-child(11), &:nth-child(12) {
+			top: calc((3 * #{$dice-size}) + 3 * #{$border-spacing});
+		}
+	}
+
+	@else if $size == lg {
+		$dice-size: 60px !default;
+		$dice-border: 5px !default;
+		$dice-radius: 14px !default;
+		$dot-size: 12px !default;
+		$dot-border: 2px !default;
+		$border-spacing: 1em !default;
+
+		height: $dice-size;
+		width: $dice-size;
+		border-radius: $dice-radius + 3px;
+
+		// Horizontal positionning
+		&:nth-child(3n + 2) {
+			left: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(3n + 3) {
+			left: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		// Vertical positionning
+		&:nth-child(4), &:nth-child(5), &:nth-child(6) {
+			top: calc(#{$dice-size} + #{$border-spacing});
+		}
+		&:nth-child(7), &:nth-child(8), &:nth-child(9) {
+			top: calc((2 * #{$dice-size}) + 2 * #{$border-spacing});
+		}
+		&:nth-child(10), &:nth-child(11), &:nth-child(12) {
+			top: calc((3 * #{$dice-size}) + 3 * #{$border-spacing});
+		}
+	}
+}

@@ -75,9 +75,9 @@ document.addEventListener('click', function() {
 			dice.style.marginLeft = 0;
 			// Moves dice
 			boardControls.querySelector('.board-controls_saved-dices .dices').appendChild(dice);
-			// Updates board contorls score
+			// Updates score in board controls
 			countTotal('board-controls_saved-dices', 'board-controls_turn-info.is-score');
-			// Updates board game score
+			// Updates score in board game
 			countTotal('board_dice-container', 'board_score');
 			// Updates dice number in controls
 			decreaseDiceNumber();

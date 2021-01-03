@@ -146,6 +146,11 @@ $dot-color: $primary;
 		height: 750px;
 	}
 }
+@media (max-width: 1200px) {
+	.dice-track__dice-container {
+		height: 100%;
+	}
+}
 @media (min-width: 575px) and (max-width: 1200px) {
 	body {
 		position: absolute;
@@ -184,9 +189,6 @@ $dot-color: $primary;
 	}
 	.dice-track__container {
 		flex: 1;
-	}
-	.dice-track__dice-container {
-		height: 100%;
 	}
 	.dice-track {
 		width: 100%;

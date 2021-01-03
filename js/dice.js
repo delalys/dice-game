@@ -12,10 +12,10 @@ class Dice {
 	createHTML() {
 		let dice = document.createElement("div");
 		if (screenSm.matches || screenSmToLg.matches) {
-			var classesToAdd = [ `dice`, `dice-sm`, `unrolled`, `dice-${this.color}`];
-		} else {
 			var classesToAdd = [ `dice`, `unrolled`, `dice-${this.color}`];
+		} else {
 		}
+		var classesToAdd = [ `dice`, `unrolled`, `dice-${this.color}`];
 
 		if (this.color == 'golden') {
 			classesToAdd.push('dice-gold');

@@ -198,8 +198,13 @@ $dot-color: $primary;
 			border: solid 2px $border-color;
 		}
 
-		&__item--saved-dices .mark {
-			@include mark-maker(sm);
+		&__item--saved-dices {
+			.dice {
+				@include dice-maker(sm);
+			}
+			.mark {
+				@include mark-maker(sm);
+			}
 		}
 	}
 }

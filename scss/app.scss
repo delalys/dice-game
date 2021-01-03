@@ -32,10 +32,11 @@ body {
 }
 @media (max-width: 576px) {
 	#AboutThisAppBtn {
-		top: 1em;
-		left: 1em;
+		top: 0.5em;
+		left: 0.5em;
 		right: inherit;
 		bottom: inherit;
+		z-index: 100;
 	}
 }
 body,

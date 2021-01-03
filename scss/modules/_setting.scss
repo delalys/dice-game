@@ -112,8 +112,9 @@
 		&.is-title {
 			position: fixed;
 			padding: 0;
-			right: 1em;
-			top: 1em;
+			right: 0.5em;
+			top: 0.5em;
+			z-index: 100;
 		}
 		.setting--dice-number {
 			display: block;

@@ -25,7 +25,8 @@ class Game {
 			var diceTopPosition = Math.round(Math.random() * (2 - -2) + -2);
 			var diceTimeTransition = Math.round(Math.random() * (500 - 300) + 300);
 			if (screenSm.matches) {
-				var diceLeftPosition = Math.round(Math.random() * (20 - -20) + -20);
+				var diceLeftPosition = Math.round(Math.random() * (26 - -26) + -26);
+				var diceTopPosition = Math.round(Math.random() * (15 - -15) + -15);
 				twoHalfsGrid(diceHTML, i);
 			} else if (screenSmToLg.matches) {
 				var diceLeftPosition = Math.round(Math.random() * (30 - -30) + -30);

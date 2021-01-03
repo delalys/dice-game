@@ -185,6 +185,9 @@ $dot-color: $primary;
 	.dice-track__container {
 		flex: 1;
 	}
+	.dice-track__dice-container {
+		height: 100%;
+	}
 	.dice-track {
 		width: 100%;
 		height: 100%;

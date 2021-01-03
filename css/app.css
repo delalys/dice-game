@@ -11463,27 +11463,27 @@ input[type=radio]:checked + label .coffer .check:before {
 
 /* line 155, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice.scss */
 .dice-sm:not(.saved).position-split-2[data-order-id='0'], .dice-sm:not(.saved).position-split-2[data-order-id='1'] {
-  top: calc(50% + 1em - (40px / 2));
+  top: calc(50% - (40px / 2));
 }
 
 /* line 159, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice.scss */
 .dice-sm:not(.saved).position-split-2[data-order-id='2'], .dice-sm:not(.saved).position-split-2[data-order-id='3'] {
-  top: calc(50% - 40px - (40px / 2));
+  top: calc(50% - 18% - (40px / 2));
 }
 
 /* line 163, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice.scss */
 .dice-sm:not(.saved).position-split-2[data-order-id='4'], .dice-sm:not(.saved).position-split-2[data-order-id='5'] {
-  top: calc(50% + 40px + 2 * 1em - (40px / 2));
+  top: calc(50% + 18% - (40px / 2));
 }
 
 /* line 167, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice.scss */
 .dice-sm:not(.saved).position-split-2[data-order-id='6'], .dice-sm:not(.saved).position-split-2[data-order-id='7'] {
-  top: calc(50% - 2 * 40px - 1em - (40px / 2));
+  top: calc(50% - 36% - (40px / 2));
 }
 
 /* line 171, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice.scss */
 .dice-sm:not(.saved).position-split-2[data-order-id='8'] {
-  top: calc(50% + 2 * 40px + 3 * 1em - (40px / 2));
+  top: calc(50% + 36% - (40px / 2));
 }
 
 /* line 179, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice.scss */
@@ -12072,13 +12072,17 @@ input[type=radio]:checked + label .coffer .check:before {
     flex: 1;
   }
   /* line 188, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice-track.scss */
+  .dice-track__dice-container {
+    height: 100%;
+  }
+  /* line 191, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice-track.scss */
   .dice-track {
     width: 100%;
     height: 100%;
     margin-left: 0;
     font-size: 12px;
   }
-  /* line 193, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice-track.scss */
+  /* line 196, ../../../../../Users/thomasdelissen/Dropbox/Autres/Sites/dice-game/scss/modules/_dice-track.scss */
   .dice-track:after {
     display: none;
   }
@@ -13859,7 +13863,7 @@ body {
   position: fixed;
   right: 1em;
   bottom: 1em;
-  z-index: 999;
+  z-index: 2;
 }
 
 @media (max-width: 576px) {

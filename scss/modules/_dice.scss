@@ -154,26 +154,26 @@
 				// vertical
 				&[data-order-id='0'],
 				&[data-order-id='1'] {
-					top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
+					top: calc(50% - (#{$dice-size} / 2) );
 				}
 				&[data-order-id='2'],
 				&[data-order-id='3'] {
-					top: calc(50% - #{$dice-size} - (#{$dice-size} / 2) );
+					top: calc(50% - 18% - (#{$dice-size} / 2) );
 				}
 				&[data-order-id='4'],
 				&[data-order-id='5'] {
-					top: calc(50% + #{$dice-size} + 2 * #{$dice-margin} - (#{$dice-size} / 2) );
+					top: calc(50% + 18% - (#{$dice-size} / 2) );
 				}
 				&[data-order-id='6'],
 				&[data-order-id='7'] {
-					top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
+					top: calc(50% - 36% - (#{$dice-size} / 2) );
 				}
 				&[data-order-id='8'] {
-					top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+					top: calc(50% + 36% - (#{$dice-size} / 2) );
 				}
 			}
 		}
-		
+
 	}
 
 	&.dice-white {

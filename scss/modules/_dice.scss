@@ -1,9 +1,9 @@
-@mixin dice-maker($size: lg) {
+@mixin dice-maker($size) {
 	$dice-size: 60px !default;
-	$dice-border: 5px !default;
+	$dice-border: 4px !default;
 	$dice-radius: 14px !default;
 	$dot-size: 12px !default;
-	$dot-border: 2px !default;
+	$dot-border: 1px !default;
 	$dice-color: MintCream;
 	$dot-color: $primary;
 	$dice-margin: 1em;
@@ -14,6 +14,13 @@
 		$dice-radius: 4px;
 		$dot-size: 4px;
 		$dot-border: 1px;
+		&:before {
+			width: $dice-size - ($dice-border * 2);
+			height: $dice-size - ($dice-border * 2);
+			border-radius: $dice-radius -$dice-border;
+			top: $dice-border;
+			left: $dice-border;
+		}
 	} 
 
 	@if $size == xs {
@@ -22,14 +29,43 @@
 		$dice-radius: 4px;
 		$dot-size: 6px;
 		$dot-border: 1px;
+		&:before {
+			width: $dice-size - ($dice-border * 2);
+			height: $dice-size - ($dice-border * 2);
+			border-radius: $dice-radius -$dice-border;
+			top: $dice-border;
+			left: $dice-border;
+		}
 	} 
 
 	@else if $size == sm {
 		$dice-size: 40px;
-		$dice-border: 5px;
+		$dice-border: 3px;
 		$dice-radius: 8px;
 		$dot-size: 8px;
 		$dot-border: 1px;
+		&:before {
+			width: $dice-size - ($dice-border * 2);
+			height: $dice-size - ($dice-border * 2);
+			border-radius: $dice-radius -$dice-border;
+			top: $dice-border;
+			left: $dice-border;
+		}
+	}
+
+	@else if $size == lg {
+		$dice-size: 60px;
+		$dice-border: 4px;
+		$dice-radius: 14px;
+		$dot-size: 12px;
+		$dot-border: 1px;
+		&:before {
+			width: $dice-size - ($dice-border * 2);
+			height: $dice-size - ($dice-border * 2);
+			border-radius: $dice-radius -$dice-border;
+			top: $dice-border;
+			left: $dice-border;
+		}
 	}
 
 	// on .dice
@@ -49,6 +85,8 @@
 	box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.2), 0px 0px 2px 2px rgba(0,0,0,0.2);
 	transition: all 400ms ease-in-out;
 	transform: rotate(0deg);
+
+	* {pointer-events: none;}
 
 	&:nth-child(1) {
 		top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
@@ -77,41 +115,16 @@
 	&:nth-child(9) {
 		top: calc(50% + 4 * #{$dice-size} + 5 * #{$dice-margin} - (#{$dice-size} / 2) );
 	}
-	// grids distrubation in two halfs
-	&.position-split-2 {
-		// horizontal
+	&:not(.saved) {
+		// grids distrubation in two halfs
 		&.is-left {
 			left: calc(33% - (#{$dice-size} / 2));
 		}
 		&.is-right {
 			left: calc(66% - (#{$dice-size} / 2));
 		}
-		// vertical
-		&[data-order-id='0'],
-		&[data-order-id='1'] {
-			top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
-		}
-		&[data-order-id='2'],
-		&[data-order-id='3'] {
-			top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
-		}
-		&[data-order-id='4'],
-		&[data-order-id='5'] {
-			top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
-		}
-		&[data-order-id='6'],
-		&[data-order-id='7'] {
-			top: calc(50% - 4 * #{$dice-size} - 3 * #{$dice-margin} - (#{$dice-size} / 2) );
-		}
-		&[data-order-id='8'] {
-			top: calc(50% + 4 * #{$dice-size} + 5 * #{$dice-margin} - (#{$dice-size} / 2) );
-		}
-
-		&.unrolled {
-			left: 150%;
-			transform: rotate(300deg);
-		}
-		@if $size == sm {
+		&.position-split-2 {
+			// horizontal
 			// vertical
 			&[data-order-id='0'],
 			&[data-order-id='1'] {
@@ -119,30 +132,221 @@
 			}
 			&[data-order-id='2'],
 			&[data-order-id='3'] {
-				top: calc(50% - #{$dice-size} - (#{$dice-size} / 2) );
+				top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
 			}
 			&[data-order-id='4'],
 			&[data-order-id='5'] {
-				top: calc(50% + #{$dice-size} + 2 * #{$dice-margin} - (#{$dice-size} / 2) );
+				top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
 			}
 			&[data-order-id='6'],
 			&[data-order-id='7'] {
-				top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
+				top: calc(50% - 4 * #{$dice-size} - 3 * #{$dice-margin} - (#{$dice-size} / 2) );
 			}
 			&[data-order-id='8'] {
-				top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+				top: calc(50% + 4 * #{$dice-size} + 5 * #{$dice-margin} - (#{$dice-size} / 2) );
+			}
+
+			&.unrolled {
+				left: 150%;
+				transform: rotate(300deg);
+			}
+			@if $size == sm {
+				// vertical
+				&[data-order-id='0'],
+				&[data-order-id='1'] {
+					top: calc(50% + #{$dice-margin} - (#{$dice-size} / 2) );
+				}
+				&[data-order-id='2'],
+				&[data-order-id='3'] {
+					top: calc(50% - #{$dice-size} - (#{$dice-size} / 2) );
+				}
+				&[data-order-id='4'],
+				&[data-order-id='5'] {
+					top: calc(50% + #{$dice-size} + 2 * #{$dice-margin} - (#{$dice-size} / 2) );
+				}
+				&[data-order-id='6'],
+				&[data-order-id='7'] {
+					top: calc(50% - 2 * #{$dice-size} - #{$dice-margin} - (#{$dice-size} / 2) );
+				}
+				&[data-order-id='8'] {
+					top: calc(50% + 2 * #{$dice-size} + 3 * #{$dice-margin} - (#{$dice-size} / 2) );
+				}
 			}
 		}
+		
 	}
 
-	&.bg-white {
+	&.dice-white {
 		background-image: url('../img/marble.webp');
 	}
-	&.bg-black {
+	&.dice-black {
 		background-image: url('../img/marble-black.jpg');
 		box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1), 0px 0px 2px 0px rgba(0,0,0,0.2);
 		&:before {
 			background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+		}
+	}
+	&.dice-marble-1 {
+		background-image: url('../img/marble-1.png');
+		span {background: #809acc;}
+	}
+	&.dice-marble-2 {
+		background-image: url('../img/marble-2.png');
+		span {background: #a684ca;}
+	}
+	&.dice-marble-3 {
+		background-image: url('../img/marble-3.png');
+		span {background: #eaa5cc;}
+	}
+	&.dice-marble-4 {
+		background-image: url('../img/marble-4.png');
+		span {background: #e9b6a3;}
+	}
+	&.dice-marble-5 {
+		background-image: url('../img/marble-5.png');
+		span {background: #a9c5b1;}
+	}
+	&.dice-marble-6 {
+		background-image: url('../img/marble-6.png');
+		span {background: #99dbad;}
+	}
+	&.dice-gem-1 {
+		background-image: url('../img/gem-1.jpg');
+		span {background: white;}
+	}
+	&.dice-gem-2 {
+		background-image: url('../img/gem-2.jpg');
+		background-size: 100% 100%;
+		span {background: white;}
+	}
+	&.dice-gem-3 {
+		background-image: url('../img/gem-3.jpg');
+		background-size: 100% 100%;
+		span {background: white;}
+	}
+	&.dice-gem-4 {
+		background-image: url('../img/gem-4.jpg');
+	    background-size: 200% 200%;
+	    background-position: center;
+		span {background: white;}
+	}
+	&.dice-gem-5 {
+		background-image: url('../img/gem-5.jpg');
+		background-size: 200% 100%;
+		background-position: center;
+		span {background: white;}
+	}
+	&.dice-gem-6 {
+		background-image: url('../img/gem-6.jpg');
+		span {background: white;}
+	}
+	&.dice-gold {
+		z-index: -1;
+		background: linear-gradient(45deg, #BF953F, #BF953F, #FCF6BA);
+	    // glow
+		box-shadow: 0 0 20px 12px rgba(#BF953F,0.3), /* middle magenta */ 0 0 28px 18px rgba(#FCF6BA, 0.3); /* outer cyan */;
+		animation: glowing 3s ease-in-out infinite;
+		.spark {
+			top: -10px;
+			right: 0px;
+			z-index: 4;
+			position: absolute;
+			animation: fadeInOut 3s ease-in-out infinite;
+			animation-fill-mode: forwards; 
+		}
+		svg {
+			g {
+				transform-origin: center center;
+  				animation: rotating 6s ease-in-out infinite;
+  				animation-fill-mode: forwards; 
+			}
+			opacity: 1;
+			fill: white;
+			width: 10px;
+			height: 10px;
+		}
+		span {
+			z-index: 3;
+			background-color: black;		
+			// option diamond	
+			background-size: cover;
+			background-image: url('../img/diamond.png');
+			box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.3);
+			&:before {
+				background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+				@if $size == xxs {
+				    height: 2px;
+				    width: 2px;
+				    top: 1px;
+				    left: 1px;
+				}
+				@if $size == xs {
+					height: 6px;
+					width: 6px;
+					top: 3px;
+					left: 3px;
+				}
+				@if $size == sm {
+					height: 4px;
+					width: 4px;
+					top: 2px;
+					left: 2px;
+				}
+				@if $size == lg {
+					height: 6px;
+					width: 6px;
+					top: 3px;
+					left: 3px;
+				}
+			}
+		}
+		// golden gradient
+		.bg {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			border-radius: $dice-radius;
+			overflow: hidden;
+			// reflect effett
+			&:after {
+				content: '';
+				left: -210%;
+				width: 200%;
+				height: 200%;
+				position: absolute;
+				z-index: 2;
+				opacity: 0;
+				animation: shine-reflect 3s ease-in-out  infinite; // need 300ms
+				animation-fill-mode: forwards; 
+				content: "";
+				opacity: 0;
+				transform: rotate(-45deg);
+				background: rgba(255,255,255, 0.5);
+				background: linear-gradient(
+				to right, 
+				rgba(255,255,255, 0.13) 0%,
+				rgba(255,255,255, 0.13) 77%,
+				rgba(255,255,255, 0.5) 92%,
+				rgba(255,255,255, 0.0) 100%);
+			}
+			&:before {
+				content: '';
+				display: block;
+				height: 150%;
+				width: 150%;
+				top: 45%;
+				left: -10%;
+				border-radius: 100%;
+				position: absolute;
+				background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 20%);
+				z-index: 2;
+			}
+		}
+
+		// inner shape
+		&:before {
+			z-index: 2;
+			background: linear-gradient(180deg, rgba(#BF953F,0.5) 0%, rgba(0,0,0,0) 100%);
 		}
 	}
 	&.unrolled {
@@ -151,16 +355,11 @@
 	}
 
 	// Inside shadow
-	&:before {
-		width: $dice-size - ($dice-border * 2);
-		height: $dice-size - ($dice-border * 2);
-		border-radius: $dice-radius -$dice-border;
-		top: $dice-border;
-		left: $dice-border;
+	&::before {
 		content: "";
 		display: block;
 		position: absolute;
-		background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+		background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0) 100%);
 	}
 	// Outside wide shadow
 	&:after {
@@ -198,7 +397,7 @@
 			content: "";
 			display: block;
 			position: absolute;
-			background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+			background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 40%);
 		}
 	}
 	&[data-number='1'] {
@@ -321,7 +520,7 @@
 }
 
 .dice {
-	@include dice-maker();
+	@include dice-maker(lg);
 }
 .dice-xs {
 	@include dice-maker(xs);

@@ -1,13 +1,10 @@
 class Game {
-	constructor(numberOfDices, colorOfDices, ready = false, played = false) {
+	constructor(numberOfDices, colorOfDices) {
 		this.dices = this.createDices(numberOfDices, colorOfDices);
-		this.ready = ready;
-		this.played = played;
 	}
 
 	createDices(numberOfDices, colorOfDices) {
 		var newDices = [];
-
 		for (var i = 0; i < numberOfDices; i++) {
 			let newDice = new Dice();
 			newDice.color = colorOfDices;
@@ -17,13 +14,13 @@ class Game {
 	}
 
 	roll(target) {
-		document.querySelector('.board_dice-container').innerHTML = '';
+		document.querySelector('.dice-track__dice-container').innerHTML = '';
 		for (var i = 0; i < this.dices.length; i++) {
 			// Creates dice in DOM
 			this.dices[i].createHTML();
 
 			// Creates random value for animation
-			var diceHTML = document.querySelector('.board_dice-container').querySelectorAll('.dice')[i];
+			var diceHTML = document.querySelector('.dice-track__dice-container').querySelectorAll('.dice')[i];
 			var diceRotation = Math.round(Math.random() * (500 - 1) + 1);
 			var diceTopPosition = Math.round(Math.random() * (2 - -2) + -2);
 			var diceTimeTransition = Math.round(Math.random() * (500 - 300) + 300);
@@ -37,7 +34,6 @@ class Game {
 				var diceLeftPosition = Math.round(Math.random() * (80 - -80) + -80);
 				twoHalfsGrid(diceHTML, i);
 			}
-
 			
 			setTimeout(function(i, diceHTML, diceRotation, diceTopPosition, diceLeftPosition, diceTimeTransition){ 
 				
@@ -54,7 +50,7 @@ class Game {
 				document.querySelector('.notice').style.display = "block";
 
 				// Count total
-				countTotal('board_dice-container', 'board_score');
+				countTotal('dice-track__dice-container', 'dice-track__score');
 			}, 300, i, diceHTML, diceRotation, diceTopPosition, diceLeftPosition, diceTimeTransition);
 		}
 
@@ -70,7 +66,7 @@ class Game {
 
 
 function increaseDiceNumber() {
-	var overallDiceNumber = document.querySelectorAll('.board-controls_saved-dices .dice').length + parseInt(diceNumber.textContent);
+	var overallDiceNumber = document.querySelectorAll('.side-pannel__item--saved-dices .dice').length + parseInt(diceNumber.textContent);
 	if (overallDiceNumber < 9) {
 		diceNumber.textContent = parseInt(diceNumber.textContent) + 1;
 	}
@@ -78,17 +74,17 @@ function increaseDiceNumber() {
 
 function maxDiceNumber() {
 	var toRollDiceNumber = parseInt(diceNumber.textContent);
-	var savedDiceNumber = document.querySelectorAll('.board-controls_saved-dices .dice').length;
+	var savedDiceNumber = document.querySelectorAll('.side-pannel__item--saved-dices .dice').length;
 	var overallDiceNumber = savedDiceNumber + toRollDiceNumber;
 	if (savedDiceNumber == 9 ) {
-		document.querySelector('.board-controls').classList.add('game-disabled');
+		document.querySelector('.side-pannel').classList.add('game-disabled');
 	} else {
-		document.querySelector('.board-controls').classList.remove('game-disabled');
+		document.querySelector('.side-pannel').classList.remove('game-disabled');
 	}
 	if (overallDiceNumber >= 9 ) {
-		document.querySelector('.board-controls').classList.add('max-dice-number', 'more-dice-disable');
+		document.querySelector('.side-pannel').classList.add('max-dice-number', 'more-dice-disable');
 	} else {
-		document.querySelector('.board-controls').classList.remove('max-dice-number', 'more-dice-disable');
+		document.querySelector('.side-pannel').classList.remove('max-dice-number', 'more-dice-disable');
 	}
 }
 
@@ -97,6 +93,10 @@ function decreaseDiceNumber() {
 	maxDiceNumber();
 	if (diceNumber.textContent > 1 ) {
 		diceNumber.textContent = parseInt(diceNumber.textContent) - 1;
+	}
+	var savedDiceNumber = document.querySelectorAll('.side-pannel__item--saved-dices .dice').length;
+	if (savedDiceNumber == 9) {
+		diceNumber.textContent = parseInt(diceNumber.textContent) - 1;	
 	}
 	maxDiceNumber();
 }

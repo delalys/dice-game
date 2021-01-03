@@ -1,0 +1,136 @@
+.setting {
+	$dice-size: 60px !default;
+
+	padding: 0;
+	align-items: center;
+
+	&__label {
+		margin-right: 1em;
+		min-width: 60px;
+		margin-right: 0.75rem;
+		cursor: pointer;
+	}
+	&__title {
+		margin-bottom: 1em;
+		&.marble {
+			font-family: 'Alfa Slab One', cursive;
+			display: inline-block;
+			border: solid 1px #c8cadd;
+			padding: 0.5em;
+			font-size: 2em;
+			margin-left: 1em;
+			margin-right: 1em;
+			background-image: url('../img/marble-6.png'); 
+			background-repeat: repeat; 
+			-webkit-background-clip: text; 
+			-webkit-text-fill-color: transparent;
+			-webkit-font-smoothing: antialiased;
+		}
+		&.gem {
+			font-size: 3em;
+			font-family: 'Miss20-Regular';
+		}
+	}
+
+	// .setting__dice-number
+	&--dice-number {
+		.setting__less,
+		.setting__more,
+		.setting__dice-number {
+			user-select: none;
+			font-size: 30px;
+			line-height: 1em;
+			font-weight: 700;
+		}
+
+		.setting__less,
+		.setting__more {
+			cursor: pointer;
+			text-shadow: 0px 0px 5px  rgba(0,0,0,1);
+			color: $primary;
+			display: inline-block;
+			padding: 0 0.5em;
+			&:hover {
+				color: darken($primary, 5%);
+			}
+			&:active {
+				color: darken($primary, 10%);
+			}
+		}
+		.setting__dice-number {
+			display: inline-block;
+			min-width: 30px;
+			text-align: center;
+			margin: 0 10px;
+		}
+	}
+	.form-check .dice {
+		margin-left: 0;
+		margin-bottom: 35px;
+	}
+	.form-check-label .dice-gold {
+		margin-bottom: 40px;
+	}
+	.coffer {
+		.dice + .check {
+			top: 75px;
+		}
+	}
+	.dice + .check {
+		top: 70px;
+		left: calc(50% - 25px / 2);
+	}
+}
+@media (min-width: 576px) and (max-width: 1058px) {
+	.setting {
+		&_label {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.setting {
+		&--dice-number {
+			.setting__dice-number {
+				top: 50%;
+				right: 0;
+				line-height: 1em;
+				margin-top: -0.5em;
+				margin-right: 0;
+				position: absolute;
+			}
+			.setting__more, 
+			.setting__less {
+				display: block;
+				padding-left: 0.3em;
+				padding-right: 0.3em;
+			}
+		}
+	}
+	.side-pannel__item {
+		&.is-title {
+			position: fixed;
+			padding: 0;
+			right: 1em;
+			top: 1em;
+		}
+		.setting--dice-number {
+			display: block;
+			padding: 0 1.5em 0 0;
+			text-align: center;
+		}
+	}
+}
+@media (max-width: 575px) {
+	.setting {
+		&__title {
+			&.marble {
+				font-size: 1em;
+			}
+			&.gem {
+				font-size: 1.5em;
+			}
+		}
+	}
+}

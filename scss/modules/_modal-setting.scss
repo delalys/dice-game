@@ -1,0 +1,105 @@
+.modal-setting {
+	.modal-body {
+		background: $grey-darker;
+		color: white;
+	}
+	&__content {
+		flex-direction: column;
+		position: relative;
+		overflow: hidden;
+		padding: 1em;
+		border: solid $board-first-border +2px $border-color;
+
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&:before {
+			width: calc(100% - (#{$board-padding} * 2) + 4px);
+			height: calc(100% - (#{$board-padding} * 2) + 4px);
+			top: $board-padding - 2px;
+			left: $board-padding - 2px;
+
+			border: solid $board-first-border $border-color;
+		}
+		&:after {
+			width: calc(100% - (#{$board-padding} * 2) - 6px - (#{$board-first-border} * 2));
+			height: calc(100% - (#{$board-padding} * 2) - 6px - (#{$board-first-border} * 2));
+			top: $board-padding + $board-first-border + $board-padding - 4px;
+			left: $board-padding + $board-first-border + $board-padding - 4px;
+
+			border: solid 2px $border-color
+		}
+	}
+	&__item {
+		text-align: center;
+		padding: 2em 1em;
+		max-width: 400px;
+		align-self: center;
+		border-bottom: solid 1px $border-color;
+		position: relative;
+		z-index: 2;
+		&:nth-child(even) {
+			background: rgba(255,255,255, 0.05);
+		}
+	}
+	&__title {
+		font-weight: bold;
+		font-size: 1em;
+		margin-bottom: 10px;
+	}
+	&__description {
+		font-size: 0.9em;
+		color: rgba(white, 0.7);
+	}
+	.dice {
+		position: static;
+		margin: 0 0 0.5em 0.5em;
+		float: left;
+	}
+	.form-check-inline {	
+		vertical-align: middle;
+	}
+	.golden-logo {
+		margin-top: 15px;
+	}
+	.golden-logo,
+	.coffer {
+		display: block;
+		margin: 0 auto;
+	}
+	.coffer,
+	.golden-logo {
+		margin-top: 1em;
+	}
+	.coffer + .modal-setting__description {
+		margin-top: 30px;
+	}
+}
+@media (min-width: 576px) {
+	.modal-setting {
+		&__item {
+			min-width: 400px;
+		}
+	}
+	.golden-logo {
+		@include golden-logo-lg;
+	}
+}
+@media (max-width: 576px) {
+	.modal-setting {
+		&__title {
+			margin: 0.5em 0;
+		}	
+		&__item {
+			padding: 1em 0.5em;
+		}	
+		.form-check {
+			.dice {
+				margin-bottom: 45px;
+			}
+		}
+	}
+}

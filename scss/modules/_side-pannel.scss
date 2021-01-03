@@ -1,0 +1,313 @@
+$board-padding: 7px;
+$board-first-border: 3px;
+$border-color: rgba(255,255,255,0.5);
+
+$dice-color: MintCream;
+$dot-color: $primary;
+
+.side-pannel {
+	padding: 1em;
+	background: $grey-darker;
+	position: relative;
+	border: solid $board-first-border +2px $border-color;
+
+	* {
+		position: relative;
+		color: white;
+		z-index: 2;
+	}
+	.dice {
+		span {
+			pointer-events: none;
+		}
+	}
+	h3 {
+		line-height: 1em;
+		margin-bottom: 0;
+	}
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 1;
+	}
+	&:before {
+		width: calc(100% - (#{$board-padding} * 2) + 4px);
+		height: calc(100% - (#{$board-padding} * 2) + 4px);
+		top: $board-padding - 2px;
+		left: $board-padding - 2px;
+
+		border: solid $board-first-border $border-color;
+	}
+	&:after {
+		width: calc(100% - (#{$board-padding} * 2) - 6px - (#{$board-first-border} * 2));
+		height: calc(100% - (#{$board-padding} * 2) - 6px - (#{$board-first-border} * 2));
+		top: $board-padding + $board-first-border + $board-padding - 4px;
+		left: $board-padding + $board-first-border + $board-padding - 4px;
+
+		border: solid 2px $border-color;
+	}
+
+	.side-pannel__item--saved-dices {
+		.dice {
+		position: static;
+		display: block;
+		float: left;
+		margin-top: 0 !important;
+		margin-bottom: 1em !important;
+
+		}
+	}
+	.dice {
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+
+	&.max-dice-number {
+		.setting__less {
+			&:after {
+				content: "max";
+				font-size: 12px;
+				color: white;
+				font-style: italic;
+				font-weight: normal;
+				position: absolute;
+				right: -3em;
+				top: 0.3em;
+			}
+		}
+		#diceNumber {
+			opacity: 0;
+		}
+	}
+	&.more-dice-disable {
+		.more-dices-btn {
+			pointer-events: none;
+			cursor: not-allowed;
+			opacity: 0.6;
+		}
+	}
+	&.game-disabled {
+		#rollBtn {
+			pointer-events: none;
+			cursor: not-allowed;
+			opacity: 0.6;
+		}
+	}
+
+
+	// side-pannel__item
+	&__item {
+		padding: 1em;
+		line-height: 1em;
+		align-items: center;
+		border-bottom: solid 1px $border-color;
+		display: flex;
+		.setting__label {
+			margin-right: 1em;
+			min-width: 60px;
+		}
+		&--saved-dices {
+			position: relative;
+			margin: 1em;
+			display: none;
+			.marks {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+		}
+		.setting {
+			display: flex;
+		}
+	}
+	.clear-btn * {
+		pointer-events: none;
+	}
+	&__bottom {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+		width: calc(100% - 2rem);
+		.side-pannel__item {
+			display: none;
+			padding: 1em;
+			line-height: 1em;
+			border-top: solid 1px $border-color;
+			&--score,
+			&--rolls-count {
+				opacity: 0.5;
+			}
+			&--score {
+				border-bottom: solid 1px $border-color;
+			}
+			&--saved-dices {
+				padding: 0;
+				border: none;
+			}
+		}
+	}
+	.btn-link {
+		color: $primary;
+	}
+}
+
+// Desktop
+@media (min-width: 1059px) {
+	.side-pannel {
+		@include board-control-width-maker(lg);
+	}
+	.side-pannel__item--saved-dices .mark {
+		@include mark-maker(lg);
+	}
+}
+@media (min-width: 1059px) {
+	.side-pannel__item--saved-dices {
+		@include board-control-width-maker(sm);
+		.dice {
+			@include dice-maker(lg);
+		}
+	}
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 1058px) {
+	.side-pannel {
+		@include board-control-width-maker(sm);
+		font-size: 12px;
+		&:before {
+			width: calc(100% - (#{$board-padding} * 2) + 4px);
+			height: calc(100% - (#{$board-padding} * 2) + 4px);
+			top: $board-padding - 2px;
+			left: $board-padding - 2px;
+
+			border: solid $board-first-border $border-color;
+		}
+		&:after {
+			display: none;
+			width: calc(100% - (#{$board-padding} * 2) - 6px - (#{$board-first-border} * 2));
+			height: calc(100% - (#{$board-padding} * 2) - 6px - (#{$board-first-border} * 2));
+			top: $board-padding + $board-first-border + $board-padding - 4px;
+			left: $board-padding + $board-first-border + $board-padding - 4px;
+
+			border: solid 2px $border-color;
+		}
+
+		&__item--saved-dices .mark {
+			@include mark-maker(sm);
+		}
+	}
+}
+
+// Phone
+@media (min-width: 575px) {
+	.side-pannel {
+		&__item {
+			&--saved-dices {
+				.dice {
+					margin-right: 1em;
+				}
+			}
+		}
+	}
+	margin-right: 1em !important;
+}
+@media (max-width: 575px) {
+	.side-pannel {
+		width: 100%;
+		flex-direction: row-reverse;
+		display: flex;
+		padding: 0.5em;
+		@include board-control-width-maker(xxs);
+		&:after {
+			display: none;
+		}
+		&__bottom {
+			bottom: 1em;
+			.side-pannel__item--clear {
+				position: absolute;
+				left: 109px;
+				bottom: -1px;
+				border: none;
+				padding: 0;
+				.btn {
+					color: $primary !important;
+					padding: 0 0.5em;
+					text-decoration: none;
+				}
+			}
+		}
+		&__item {
+			padding: 0.5em;
+			border-bottom: none;
+			&--dice-number {
+				padding: 0;
+				text-align: center;
+			}
+			&--rolls-count,
+			&--score {
+				display: none !important;
+			}
+			&--saved-dices {
+				margin: 0;
+				.dice {
+					@include dice-maker(xxs);
+					left: inherit;
+					margin-right: 0.5em;
+					margin-top: 0 !important;
+					position: static;
+					&:nth-child(3n) {
+						margin-right: 0.5em;
+					}
+					&:nth-child(5n) {
+						margin-right: 0;
+					}
+				}
+				.mark {
+					@include mark-maker(xxs);
+				}
+			}
+			&--roll-btn {
+				display: flex;
+				flex-direction: column;
+				padding-right: 0.2em;
+				.btn {
+					flex: 1;
+					line-height: 2em;
+				}
+			}
+
+			&.is-secondary {
+				display: none;
+			}
+			h3 {
+				display: none !important;
+			}
+		}
+		&.max-dice-number {
+			.setting__less {
+				&:after {
+					right: -1.5em;
+					top: 1.35em;
+				}
+			}
+		}
+		.setting__label {
+			display: none;
+		}
+		.side-pannel__item--saved-dices .dice {
+			margin-bottom: 0.5em !important;
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(8),
+			&:nth-child(9) {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+}

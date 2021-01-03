@@ -7,9 +7,19 @@ $primary: #d93731;
 @import "vendors/bootstrap/scss/bootstrap";
 
 // Modules
+@import "tools";
+@import "font";
+@import "modules/check";
+@import "modules/golden-logo";
+@import "modules/animation";
 @import "modules/mark";
+@import "modules/coffer";
 @import "modules/dice";
-@import "modules/board";
+@import "modules/mark";
+@import "modules/dice-track";
+@import "modules/side-pannel";
+@import "modules/setting";
+@import "modules/modal-setting";
 
 body {
 	background-color: Cornsilk;
@@ -39,4 +49,7 @@ body,
 		height: calc(var(--vh, 1vh) * 100);
 	}
    /* CSS specific to iOS devices */ 
+}
+.form-check-inline {
+	margin-right: 0.6rem;
 }

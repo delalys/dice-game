@@ -1,0 +1,131 @@
+@mixin golden-logo-lg {
+	width: 250px;
+	height: 90px;
+	.golden {
+		font-size: 3em;
+		span {
+			height: 30px;
+		}
+	}
+	.of,
+	.the {
+		font-size: 0.8em;
+	}
+	.the {
+	    left: 3px;
+	    top: 12px;
+	    transform: rotate(-38deg);
+	}
+	.of {
+		margin: 0;
+		left: inherit;
+		right: 20px;
+		top: 61%;
+		transform: rotate(43deg);
+	}
+	.luck {
+		font-size: 2.5em;
+		margin-left: -18px;
+		&:before,
+		&:after  {
+			width: 20px;
+		}
+	}
+}
+.golden-logo {
+	width: 120px;
+	height: 50px;
+	position: relative;
+	z-index: 2;
+		line-height: 1em;
+	* {
+		position: relative;
+		z-index: 2;
+	}
+	.golden {
+		font-family: 'Staatliches', cursive;
+		font-size: 1.3em;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		&.over {
+			z-index: 100;
+			* {
+				background: linear-gradient(0deg, #AA771C, #BF953F, #FCF6BA);
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+		}
+		// text-shadow 3D
+		&.under {
+			z-index: -1;
+			text-shadow: 
+			-1px 0 0 #FCF6BA,
+			0 1px 0 #BF953F,
+			-2px 1px 0.125px #FCF6BA,
+			-1px 2px 0.125px #BF953F;
+			* {
+				&:nth-child(1) {z-index: 99;}
+				&:nth-child(2) {z-index: 98;}
+				&:nth-child(3) {z-index: 97;}
+				&:nth-child(4) {z-index: 96;}
+				&:nth-child(5) {z-index: 95;}
+				&:nth-child(6) {z-index: 94;}
+				&:nth-child(7) {z-index: 93;}
+				&:nth-child(8) {z-index: 92;}
+				&:nth-child(9) {z-index: 91;}
+				&:nth-child(10) {z-index: 90;}
+				&:nth-child(11) {z-index: 89;}
+			}
+		}
+	}
+	.of,
+	.the {
+		font-family: 'Pacifico', cursive;
+		font-size: 0.5em;
+		color: #FCF6BA;
+		//opacity: 0.7;
+	}
+	.the {
+		position: absolute;
+	    left: 3px;
+	    top: -6px;
+	    transform: rotate(-24deg);
+	}
+	.of {
+		position: absolute;
+		left: 50%;
+		margin-left: 47px;
+		top: 32%;
+    	transform: rotate(27deg);
+	}
+	.luck {
+		font-family: 'Parisienne', cursive;
+		position: absolute;
+		bottom: 6px;
+		left: 32%;
+		margin-left: -12px;
+		font-size: 1.2em;
+		line-height: 1.2em;
+		background: linear-gradient(0deg, #AA771C, #BF953F, #FCF6BA);
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		text-shadow: 0 0 5px rgba(#FCF6BA, 0.7);
+		&:before,
+		&:after {
+			display: inline-block;
+			content:'';
+			width: 10px;
+			border-top: solid 1px #BF953F;
+			margin-right: 3px;
+			margin-bottom: 2px;
+			box-shadow: 0 0 5px rgba(#FCF6BA, 0.7);
+		}
+		&:after {
+			margin-left: 3px;
+		}
+		&-lg {
+			@include golden-logo-lg;
+		}
+	}
+}

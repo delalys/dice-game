@@ -1,0 +1,6 @@
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.read-more + [data-readmore-toggle], .read-more [data-readmore] { display: block; width: 100%; }
+.read-more {overflow: hidden}

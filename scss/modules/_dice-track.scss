@@ -149,6 +149,9 @@ $dot-color: $primary;
 @media (min-width: 1200px) {
 	.dice-track {
 		height: 750px;
+		.dice {
+			@include dice-maker(lg)
+		}
 	}
 }
 @media (max-width: 1200px) {

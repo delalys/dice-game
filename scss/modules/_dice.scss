@@ -69,6 +69,8 @@
 		$dice-radius: 14px;
 		$dot-size: 12px;
 		$dot-border: 1px;
+
+		font-size: inherit;
 		&:before {
 			width: $dice-size - ($dice-border * 2);
 			height: $dice-size - ($dice-border * 2);

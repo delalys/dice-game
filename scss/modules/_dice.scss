@@ -71,6 +71,9 @@
 		$dot-border: 1px;
 
 		font-size: inherit;
+		.dice__value {
+			line-height: 2.1em
+		}
 		&:before {
 			width: $dice-size - ($dice-border * 2);
 			height: $dice-size - ($dice-border * 2);

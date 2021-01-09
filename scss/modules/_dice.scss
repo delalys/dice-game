@@ -5,7 +5,7 @@
 	$dot-size: 12px !default;
 	$dot-border: 1px !default;
 	$dice-color: MintCream;
-	$dot-color: $primary;
+	$dot-color: #2d2d2d;
 	$dice-margin: 1em;
 
 	@if $size == xxs {
@@ -14,6 +14,11 @@
 		$dice-radius: 4px;
 		$dot-size: 4px;
 		$dot-border: 1px;
+		
+		.dice__value {
+			font-size: 9px;
+			line-height: 2.2em;
+		}
 		&:before {
 			width: $dice-size - ($dice-border * 2);
 			height: $dice-size - ($dice-border * 2);
@@ -44,6 +49,11 @@
 		$dice-radius: 8px;
 		$dot-size: 8px;
 		$dot-border: 1px;
+
+		font-size: 12px;
+		.dice__value {
+			line-height: 2em;
+		}
 		&:before {
 			width: $dice-size - ($dice-border * 2);
 			height: $dice-size - ($dice-border * 2);
@@ -182,65 +192,100 @@
 	&.dice-black {
 		background-image: url('../img/marble-black.jpg');
 		box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1), 0px 0px 2px 0px rgba(0,0,0,0.2);
+		.dot {
+			background: white;
+		}
+		.dice__value {
+			color: white;
+			text-shadow: 0 0 2px white;
+		}
 		&:before {
 			background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
 		}
 	}
+	// all marble dice
+	&[class^='dice-marble'], &[class*=' dice-marble'] {
+		.dice__value {
+			//text-shadow: 0 0 2px white;
+		}
+	}
 	&.dice-marble-1 {
 		background-image: url('../img/marble-1.png');
-		span {background: #809acc;}
+		.dot {background: #809acc;}
+		.dice__value {color: #809acc;}
 	}
 	&.dice-marble-2 {
 		background-image: url('../img/marble-2.png');
-		span {background: #a684ca;}
+		.dot {background: #a684ca;}
+		.dice__value {color: #a684ca;}
 	}
 	&.dice-marble-3 {
 		background-image: url('../img/marble-3.png');
-		span {background: #eaa5cc;}
+		.dot {background: #e99ad3;}
+		.dice__value {color: #e99ad3;}
 	}
 	&.dice-marble-4 {
 		background-image: url('../img/marble-4.png');
-		span {background: #e9b6a3;}
+		.dot {background: #e9b29e;}
+		.dice__value {color: #e9b29e;}
 	}
 	&.dice-marble-5 {
 		background-image: url('../img/marble-5.png');
-		span {background: #a9c5b1;}
+		.dot {background: #a9c5b1;}
+		.dice__value {color: #a9c5b1;}
 	}
 	&.dice-marble-6 {
 		background-image: url('../img/marble-6.png');
-		span {background: #99dbad;}
+		.dot {background: #81cb9b;}
+		.dice__value {color: #81cb9b;}
+	}
+	// all gem dice
+	&[class^='dice-gem'], &[class*=' dice-gem'] {
+		background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.0) 100%);
+		.dice__value {
+			text-shadow: 0 0 2px white;
+		}
 	}
 	&.dice-gem-1 {
 		background-image: url('../img/gem-1.jpg');
-		span {background: white;}
+		.dot {background: white;}
+		.dice__value {color: white;}
 	}
 	&.dice-gem-2 {
 		background-image: url('../img/gem-2.jpg');
 		background-size: 100% 100%;
-		span {background: white;}
+		.dot {background: white;}
+		.dice__value {color: white;}
 	}
 	&.dice-gem-3 {
 		background-image: url('../img/gem-3.jpg');
 		background-size: 100% 100%;
-		span {background: white;}
+		.dot {background: white;}
+		.dice__value {color: white;}
 	}
 	&.dice-gem-4 {
 		background-image: url('../img/gem-4.jpg');
 	    background-size: 200% 200%;
 	    background-position: center;
-		span {background: white;}
+		.dot {background: white;}
+		.dice__value {color: white;}
 	}
 	&.dice-gem-5 {
 		background-image: url('../img/gem-5.jpg');
 		background-size: 200% 100%;
 		background-position: center;
-		span {background: white;}
+		.dot {background: white;}
+		.dice__value {
+			color: white;
+			text-shadow: 0 0 3px white;
+		}
 	}
 	&.dice-gem-6 {
 		background-image: url('../img/gem-6.jpg');
-		span {background: white;}
+		.dot {background: white;}
+		.dice__value {color: white;}
 	}
-	&.dice-gold {
+	&.dice-golden {
 		z-index: -1;
 		background: linear-gradient(45deg, #BF953F, #BF953F, #FCF6BA);
 	    // glow
@@ -254,6 +299,12 @@
 			animation: fadeInOut 3s ease-in-out infinite;
 			animation-fill-mode: forwards; 
 		}
+		.dice__value {
+			position: absolute;
+			color: white;
+			text-shadow: 0 0 1px white;
+    		z-index: 2;
+		}
 		svg {
 			g {
 				transform-origin: center center;
@@ -265,13 +316,13 @@
 			width: 10px;
 			height: 10px;
 		}
-		span {
+		.dot {
 			z-index: 3;
 			background-color: black;		
 			// option diamond	
 			background-size: cover;
 			background-image: url('../img/diamond.png');
-			box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.3);
+			box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.3), 0px 0px 3px 2px rgba(255, 255, 255, 0.3);
 			&:before {
 				background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 				@if $size == xxs {
@@ -346,7 +397,7 @@
 		// inner shape
 		&:before {
 			z-index: 2;
-			background: linear-gradient(180deg, rgba(#BF953F,0.5) 0%, rgba(0,0,0,0) 100%);
+			background: linear-gradient(180deg, rgba(#BF953F,0.5) 0%, rgba(0,0,0,0.05) 100%);
 		}
 	}
 	&.unrolled {
@@ -355,11 +406,11 @@
 	}
 
 	// Inside shadow
-	&::before {
+	&:before {
 		content: "";
 		display: block;
 		position: absolute;
-		background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0) 100%);
+		background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.0) 100%);
 	}
 	// Outside wide shadow
 	&:after {
@@ -376,7 +427,7 @@
 	}
 
 	// Dots
-	span {
+	.dot {
 		width: $dot-size;
 		height: $dot-size;	
 		box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.3);
@@ -400,119 +451,134 @@
 			background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 40%);
 		}
 	}
-	&[data-number='1'] {
-		span:first-child {
+	&__value {
+		color: $primary;
+		font-size: 1.8em;
+		font-weight: 700;
+		height: $dice-size;
+		width: $dice-size;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 2.05em;
+		color: $dot-color;
+		text-shadow: 1px 1px 2px #def, 0 0 0 #000, 1px 1px 1px white;
+		position: relative;
+		z-index: 2;
+	}
+	&.dice-typed6[data-number='1'] {
+		.dot:first-child {
 			display: block;
 			left: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
 	}
-	&[data-number='2'],
-	&[data-number='3'] {
-		span:first-child,
-		span:nth-child(2) {
+	&.dice-typed6[data-number='2'],
+	&.dice-typed6[data-number='3'] {
+		.dot:first-child,
+		.dot:nth-child(2) {
 			display: block;
 		}
-		span:first-child {
+		.dot:first-child {
 			top: 15%;
 			left: 15%;
 		}
-		span:nth-child(2) {
+		.dot:nth-child(2) {
 			bottom: 15%;
 			right: 15%;
 		}
 	}
-	&[data-number='3'] {
+	&.dice-typed6[data-number='3'] {
 		display: block;
-		span:nth-child(3) {
+		.dot:nth-child(3) {
 			display: block;
 			left: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
 	}
-	&[data-number='4'] {
-		span:first-child,
-		span:nth-child(2),
-		span:nth-child(3),
-		span:nth-child(4) {
+	&.dice-typed6[data-number='4'] {
+		.dot:first-child,
+		.dot:nth-child(2),
+		.dot:nth-child(3),
+		.dot:nth-child(4) {
 			display: block;
 		}
-		span:nth-child(1) {
+		.dot:nth-child(1) {
 			bottom: 15%;
 			right: 15%;
 		}
-		span:nth-child(2) {
+		.dot:nth-child(2) {
 			bottom: 15%;
 			left: 15%;
 		}
-		span:nth-child(3) {
+		.dot:nth-child(3) {
 			top: 15%;
 			right: 15%;
 		}
-		span:nth-child(4) {
+		.dot:nth-child(4) {
 			top: 15%;
 			left: 15%;
 		}
 	}
-	&[data-number='5'] {
-		span:first-child,
-		span:nth-child(2),
-		span:nth-child(3),
-		span:nth-child(4),
-		span:nth-child(5) {
+	&.dice-typed6[data-number='5'] {
+		.dot:first-child,
+		.dot:nth-child(2),
+		.dot:nth-child(3),
+		.dot:nth-child(4),
+		.dot:nth-child(5) {
 			display: block;
 		}
-		span:nth-child(1) {
+		.dot:nth-child(1) {
 			bottom: 15%;
 			right: 15%;
 		}
-		span:nth-child(2) {
+		.dot:nth-child(2) {
 			bottom: 15%;
 			left: 15%;
 		}
-		span:nth-child(3) {
+		.dot:nth-child(3) {
 			top: 15%;
 			right: 15%;
 		}
-		span:nth-child(4) {
+		.dot:nth-child(4) {
 			top: 15%;
 			left: 15%;
 		}
-		span:nth-child(5) {
+		.dot:nth-child(5) {
 			left: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
 	}
-	&[data-number='6'] {
-		span:first-child,
-		span:nth-child(2),
-		span:nth-child(3),
-		span:nth-child(4),
-		span:nth-child(5),
-		span:nth-child(6) {
+	&.dice-typed6[data-number='6'] {
+		.dot:first-child,
+		.dot:nth-child(2),
+		.dot:nth-child(3),
+		.dot:nth-child(4),
+		.dot:nth-child(5),
+		.dot:nth-child(6) {
 			display: block;
 		}
-		span:nth-child(1) {
+		.dot:nth-child(1) {
 			bottom: 12%;
 			right: 15%;
 		}
-		span:nth-child(2) {
+		.dot:nth-child(2) {
 			bottom: 12%;
 			left: 15%;
 		}
-		span:nth-child(3) {
+		.dot:nth-child(3) {
 			right: 15%;
 			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
-		span:nth-child(4) {
+		.dot:nth-child(4) {
 			left: 15%;
 			top: calc((#{$dice-size} / 2) - (#{$dot-size} / 2));
 		}
-		span:nth-child(5) {
+		.dot:nth-child(5) {
 			top: 12%;
 			right: 15%;
 		}
-		span:nth-child(6) {
+		.dot:nth-child(6) {
 			top: 12%;
 			left: 15%;
 		}

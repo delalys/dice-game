@@ -16,12 +16,12 @@ document.addEventListener('click', function() {
 		// Create game
 		const numberOfDices = document.getElementById('diceNumber').textContent;
 		const colorOfDices = document.querySelector('input[name="dice-color"]:checked').value;
+		const diceType = document.querySelector('input[name="dice-type"]:checked').value;
 
-		const game = new Game(numberOfDices, colorOfDices);
+		const game = new Game(diceType, numberOfDices, colorOfDices);
 
-		console.log(game.dices);
 		// Roll dices
-		game.roll(event.target);
+		game.sounds(event, event.target);
 	}
 });
 

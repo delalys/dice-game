@@ -80,6 +80,16 @@
 		top: 70px;
 		left: calc(50% - 25px / 2);
 	}
+	input[name="dice-type"] {
+		+ label {
+			margin-bottom: 24px;
+			.check {
+				top: 23px;
+				margin-left: -12.5px;
+				left: 50%;
+			}
+		}
+	}
 }
 @media (min-width: 576px) and (max-width: 1058px) {
 	.setting {

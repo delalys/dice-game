@@ -32,7 +32,9 @@
 
       <!-- .side-pannel__item -->
       <div class="side-pannel__item is-title d-flex">
-        <h3>Dices:</h3>
+        <span class="mute-btn sound-on">
+          <svg enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m457.941 256 47.029-47.029c9.372-9.373 9.372-24.568 0-33.941-9.373-9.373-24.568-9.373-33.941 0l-47.029 47.029-47.029-47.029c-9.373-9.373-24.568-9.373-33.941 0-9.372 9.373-9.372 24.568 0 33.941l47.029 47.029-47.029 47.029c-9.372 9.373-9.372 24.568 0 33.941 4.686 4.687 10.827 7.03 16.97 7.03s12.284-2.343 16.971-7.029l47.029-47.03 47.029 47.029c4.687 4.687 10.828 7.03 16.971 7.03s12.284-2.343 16.971-7.029c9.372-9.373 9.372-24.568 0-33.941z"/><path d="m99 160h-55c-24.301 0-44 19.699-44 44v104c0 24.301 19.699 44 44 44h55c2.761 0 5-2.239 5-5v-182c0-2.761-2.239-5-5-5z"/><path d="m280 56h-24c-5.269 0-10.392 1.734-14.578 4.935l-103.459 79.116c-1.237.946-1.963 2.414-1.963 3.972v223.955c0 1.557.726 3.026 1.963 3.972l103.459 79.115c4.186 3.201 9.309 4.936 14.579 4.936h23.999c13.255 0 24-10.745 24-24v-352.001c0-13.255-10.745-24-24-24z"/></svg>
+        </span>
         <span class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#settingModal" id="settingsBtn">
           Settings
         </span>
@@ -155,6 +157,70 @@
           <div class="modal-setting__content">
 
             <div class="modal-setting__item">
+              <div class="setting">
+                <h4 class="setting__title d-block">
+                  Dice type:
+                </h4>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed3" value="typed3">
+                    <label class="form-check-label" for="typed3">
+                      D3
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed4" value="typed4">
+                    <label class="form-check-label" for="typed4">
+                      D4
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed6" value="typed6" checked>
+                    <label class="form-check-label" for="typed6">
+                      D6
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed8" value="typed8">
+                    <label class="form-check-label" for="typed8">
+                      D8
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed10" value="typed10">
+                    <label class="form-check-label" for="typed10">
+                      D10
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed12" value="typed12">
+                    <label class="form-check-label" for="typed12">
+                      D12
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typed20" value="typed20">
+                    <label class="form-check-label" for="typed20">
+                      D20
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dice-type" id="typedper" value="typedper">
+                    <label class="form-check-label" for="typedper">
+                      D%
+                      <div class="check"></div>
+                    </label>
+                  </div>
+              </div>
+            </div>
+
+            <div class="modal-setting__item">
               <div class="setting justify-content-center">
                 <!-- golden-logo -->
                 <div class="golden-logo">
@@ -162,7 +228,7 @@
                   <span class="golden over">Golden Dice</span>
                   <span class="golden under">Golden Dice</span>
                   <span class="of">of</span>
-                  <div class="luck">Luck</div>
+                  <div class="luck">Gods</div>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="dice-color" id="golden" value="golden">
@@ -170,8 +236,8 @@
                     <!-- coffer -->
                     <div class="coffer">
                       <!-- golden dice of luck -->
-                      <div data-number="6" class="dice dice-gold"  data-order-id="0" style="transform: rotate(0deg); transition: all 438ms ease 0s; margin-top: 0px; margin-left: 0px; top: 0px;">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      <div data-number="6" class="dice dice-golden dice-typed6"  data-order-id="0" style="transform: rotate(0deg); transition: all 438ms ease 0s; margin-top: 0px; margin-left: 0px; top: 0px;">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         <div class="bg"></div>
                         <div class="spark">
                           <svg class="rotating" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320 320" style="enable-background:new 0 0 320 320;" xml:space="preserve"><g><path d="M298.138,136.665c-62.065-13.011-110.576-61.522-123.585-123.588C172.955,5.458,166.235,0,158.448,0 s-14.507,5.458-16.104,13.078c-13.01,62.065-61.521,110.575-123.586,123.584c-7.62,1.597-13.079,8.318-13.079,16.104 s5.458,14.507,13.079,16.104c62.064,13.011,110.573,61.521,123.583,123.586c1.597,7.62,8.317,13.079,16.104,13.079 c7.786,0,14.507-5.458,16.104-13.079c13.011-62.065,61.523-110.575,123.588-123.583c7.62-1.597,13.079-8.317,13.079-16.104 C311.215,144.983,305.757,138.262,298.138,136.665z"/></g></svg>
@@ -181,12 +247,12 @@
                     </div>
                   </label>
                 </div>
-                <div class="modal-setting__description">
+<!--                 <div class="modal-setting__description">
                   <p class="read-more">
                     Forgés un 13 du mois par le Forgeron de la veine, ces dés d’or pur agrémentés de diamants de fortune n’augmenteront en rien votre chance, mais il faut le dire.. ils claquent! Et puis qui sait... ce n’est peut être pas pour rien si les Golden Dice of Luck sont utilisés par tout les champions de la chance... <br><br>
                     Les champions de la chance, ces enfants inespérés, ceux dont les tartines de confitures retombent toujours du bon côté, ceux dont le pied gauche sent toujours la merde de chien, ceux qui à l’école étaient malades lors des examens surprises, ceux qui font toujours deux doubles au Monopoly mais jamais trois! Ceux-là même qui ouvrent une partie de Yahtzee avec un Yahtzee. Ces champions de la chance là... utilisent les Golden Dice of Luck. 
                   </p>
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -199,8 +265,8 @@
                     <input class="form-check-input" type="radio" name="dice-color" id="marble1" value="marble-1">
                     <label class="form-check-label" for="marble1">
                       <!-- marble dice -->
-                      <div data-number="6" class="dice dice-marble-1">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      <div data-number="6" class="dice dice-marble-1 dice-typed6">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                       </div>
                       <div class="check"></div>
                     </label>
@@ -209,8 +275,8 @@
                     <input class="form-check-input" type="radio" name="dice-color" id="marble6" value="marble-6">
                     <label class="form-check-label" for="marble6">
                       <!-- marble dice -->
-                      <div data-number="6" class="dice dice-marble-6">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      <div data-number="6" class="dice dice-marble-6 dice-typed6">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                       </div>
                       <div class="check"></div>
                     </label>
@@ -219,8 +285,8 @@
                     <input class="form-check-input" type="radio" name="dice-color" id="marble3" value="marble-3">
                     <label class="form-check-label" for="marble3">
                       <!-- marble dice -->
-                      <div data-number="6" class="dice dice-marble-3">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      <div data-number="6" class="dice dice-marble-3 dice-typed6">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                       </div>
                       <div class="check"></div>
                     </label>
@@ -229,8 +295,8 @@
                     <input class="form-check-input" type="radio" name="dice-color" id="marble4" value="marble-4">
                     <label class="form-check-label" for="marble4">
                       <!-- marble dice -->
-                      <div data-number="6" class="dice dice-marble-4">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      <div data-number="6" class="dice dice-marble-4 dice-typed6">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                       </div>
                       <div class="check"></div>
                     </label>
@@ -239,8 +305,8 @@
                     <input class="form-check-input" type="radio" name="dice-color" id="marble2" value="marble-2">
                     <label class="form-check-label" for="marble2">
                       <!-- marble dice -->
-                      <div data-number="6" class="dice dice-marble-2">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      <div data-number="6" class="dice dice-marble-2 dice-typed6">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                       </div>
                       <div class="check"></div>
                     </label>
@@ -258,8 +324,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="gem1" value="gem-1" checked>
                   <label class="form-check-label" for="gem1">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-gem-1">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-gem-1 dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>
@@ -268,8 +334,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="gem2" value="gem-2">
                   <label class="form-check-label" for="gem2">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-gem-2">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-gem-2 dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>
@@ -278,8 +344,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="gem3" value="gem-3">
                   <label class="form-check-label" for="gem3">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-gem-3">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-gem-3 dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>
@@ -288,8 +354,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="gem4" value="gem-4">
                   <label class="form-check-label" for="gem4">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-gem-4">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-gem-4 dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>
@@ -298,8 +364,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="gem5" value="gem-5">
                   <label class="form-check-label" for="gem5">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-gem-5">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-gem-5 dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>
@@ -315,8 +381,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="colorDices1" value="white" checked>
                   <label class="form-check-label" for="colorDices1">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-white">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-white dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>
@@ -325,8 +391,8 @@
                   <input class="form-check-input" type="radio" name="dice-color" id="colorDices2" value="black">
                   <label class="form-check-label" for="colorDices2">
                     <!-- marble dice -->
-                    <div data-number="6" class="dice dice-black">
-                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    <div data-number="6" class="dice dice-black dice-typed6">
+                      <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span class="dot"><span></span>
                     </div>
                     <div class="check"></div>
                   </label>

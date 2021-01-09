@@ -11,6 +11,26 @@ $dot-color: $primary;
 	position: relative;
 	border: solid $board-first-border +2px $border-color;
 
+	.mute-btn {
+		display: inline-block;
+		cursor: pointer;
+		* {
+			pointer-events: none;
+		}
+		svg {
+			width: 1.6em;
+			height: 1.6em;
+			* {
+				fill: red;
+			}
+		}
+		&.sound-on {
+			* {
+				fill: rgba(white, 0.5);
+			}	
+		}
+	}
+
 	* {
 		position: relative;
 		color: white;
@@ -209,7 +229,6 @@ $dot-color: $primary;
 	}
 }
 
-// Phone
 @media (min-width: 575px) {
 	.side-pannel {
 		&__item {
@@ -222,6 +241,7 @@ $dot-color: $primary;
 	}
 	margin-right: 1em !important;
 }
+// Phone
 @media (max-width: 575px) {
 	.side-pannel {
 		width: 100%;
@@ -232,6 +252,9 @@ $dot-color: $primary;
 		&:after {
 			display: none;
 		}
+		.mute-btn {
+			margin: 0 0.5em;
+		}		
 		&__bottom {
 			bottom: 1em;
 			.side-pannel__item--clear {

@@ -16,8 +16,6 @@ function updateRollDice(target) {
 	}
 	// Si un nouvea tour est commencé + click sur dé, ou si tour déjà commencé et nouveau clic sur roll
 	if (rollCountValue != 0 && target == rollButton) {
-		if (rollCountValue != 0) {
-		}
 		rollCountValue++;
 		rollCount.textContent = rollCountValue;
 	}
